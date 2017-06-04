@@ -1,1 +1,49 @@
 * Hello chords!
+* steps
+#+BEGIN_SRC lisp
+(let ((pc-sets '((0 1 3) (0 4 8))))
+  (iterate:iter 
+    (iterate:for pc-set in pc-sets)
+    (iterate:collect (reverse pc-set))))
+
+(let ((pc-sets '((0 1 3) (0 4 8))))
+  (iterate:iter 
+    (iterate:for pc-set in pc-sets)
+    (iterate:collect
+	(iterate:iter (iterate:for pc in pc-set)
+		      (iterate:collect (+ 12 pc))))))
+
+
+(iterate:iter 
+	   (iterate:for i in '(0 1 3 4))
+	   (iterate:collect (mapcar #'(lambda (x) (+ x i)) '(36 48 60))))
+
+(let ((pc-set '(0 1 3)))
+  (iterate:iter 
+    (iterate:for i in pc-set)
+    (iterate:collect (mapcar #'(lambda (x) (+ x i)) '(36 48 60)))))
+
+(let ((pc-sets '((0 1 3) (0 1 4))))
+  (iterate:iter 
+    (iterate:for pc-set in pc-sets)
+    (iterate:collect
+	(iterate:iter 
+	  (iterate:for i in pc-set)
+	  (iterate:collect (mapcar #'(lambda (x) (+ x i)) '(36 48 60)))))))
+
+
+(iterate:iter 
+  (iterate:for pc-set in pc-sets)
+  (iterate:collect
+      (iterate:iter 
+	(iterate:for i in pc-set)
+	(iterate:collect (mapcar #'(lambda (x) (+ x i)) oct-list)))))
+
+(let ((pc-sets '((0 1 4))))
+  (iterate:iter 
+    (iterate:for pc-set in pc-sets)
+    (iterate:collect
+	(iterate:iter 
+	  (iterate:for i in pc-set)
+	  (iterate:collect (mapcar #'(lambda (x) (+ x i)) '(36 48 60)))))))
+#+END_SRC
