@@ -31,7 +31,7 @@
 	  (iterate:for i in pc-set)
 	  (iterate:collect (mapcar #'(lambda (x) (+ x i)) '(36 48 60)))))))
 
-
+;; take out the let bindings
 (iterate:iter 
   (iterate:for pc-set in pc-sets)
   (iterate:collect
