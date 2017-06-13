@@ -1137,3 +1137,6 @@ See ENP documentation for further details."
  T)
 
 #+END_SRC
+* tips, hints and concepts
+** menu box
+=edit box->TITLE-FORMAT?= to get the strings to appear?
