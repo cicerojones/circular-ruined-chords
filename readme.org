@@ -1,6 +1,7 @@
 * COMMENT Hello chords!
 * steps
 ** to iterate
+perchance to dream
 https://common-lisp.net/project/iterate/doc/index.html#Top
 
 http://www.gigamonkeys.com/book/programming-in-the-large-packages-and-symbols.html
@@ -134,7 +135,10 @@ The results can be analyzed with the
 'sc-name' box (5). The final result can
 be inspected in a 'chord-editor' (6)
 which displays the chords as a matrix.
-* 
+* score pmc syntax, matching and rules
+** 
+* enp
+* all pmc syntax and rules
 ** single wildcard
 #+BEGIN_SRC lisp
 (in-package :ccl)
@@ -1032,6 +1036,9 @@ which displays the chords as a matrix.
 
 #+END_SRC
 * enp preferences
+** some used preferences
+- non-mensural :: durations
+ :DRAW-DURATIONS-P
 ** default global
 as of [2017-06-10 Sat 11:44]
 
@@ -1168,4 +1175,25 @@ In slime-scratch, you need to explicity "make a random state"
 
 #+BEGIN_SRC lisp
 
+#+END_SRC
+* pwgl textual lisp code
+** pmc and pc-set theory
+To return the "prime form" in numbers
+#+BEGIN_SRC lisp
+(pwgl::iterate 
+ (for n in (system::scs/card 3))
+ (collect (prime n)))
+#+END_SRC
+** example of using pmc in code box
+#+BEGIN_SRC lisp
+   (mapcar #'(lambda (l) (sort< (append l list)))
+        (pmc (make-list2 (- len (length list)) (set-difference '(0 1 2 3 4 5 6 7 8 9 10 11) list))
+             '((* ?1 ?2 (?if (< ?1 ?2)) "asc"))
+             :sols-mode :all))
+#+END_SRC
+
+#+BEGIN_SRC lisp
+(mapcar #'(lambda (l) (sort< (append l list)))
+     (pmc pcs-octs
+	  :sols-mode :all))
 #+END_SRC
