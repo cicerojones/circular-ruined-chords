@@ -1140,3 +1140,32 @@ See ENP documentation for further details."
 * tips, hints and concepts
 ** menu box
 =edit box->TITLE-FORMAT?= to get the strings to appear?
+** randomness and statistics in Common Lisp
+In slime-scratch, you need to explicity "make a random state"
+#+BEGIN_SRC lisp
+(random 10 (make-random-state T))
+#+END_SRC
+* looping and iterating
+** dotimes
+#+BEGIN_SRC lisp :results output
+(dotimes (x 10) (print (random 10)))
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+
+7 
+2 
+7 
+6 
+5 
+2 
+0 
+6 
+0 
+9 
+#+end_example
+
+#+BEGIN_SRC lisp
+
+#+END_SRC

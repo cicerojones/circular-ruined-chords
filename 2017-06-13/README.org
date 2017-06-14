@@ -1,0 +1,37 @@
+* Document this pwgl patch
+* key pieces of new code
+** template for stepping in parallel over pitches and offsets
+From midi-list-to-score.pwgl
+#+BEGIN_SRC lisp
+(list :staff :piano-staff
+      (let ((ts (pw::arithm-ser 0 dtime (* (length midis-ls) dtime))))
+        (iter (for midis in midis-ls)
+          (for time in ts)
+          (collect (list (float time) :duration (* dtime 0.9) :notes
+                         (iter (for midi in midis)
+                           (collect (list midi :clef-number (if (< midi 60) 1 0)))))))))
+#+END_SRC
+
+Remove one layer of looping(?) to produce arpeggios
+#+BEGIN_SRC lisp
+(list :staff :piano-staff
+      (let ((ts (pw::arithm-ser 0 dtime (* (length midis-ls) dtime))))
+        (iter 
+          (for midis in midis-ls)
+          (for time in ts)
+          (collect (list (float time) :duration (* dtime 0.9) :notes
+                         
+                           midis)))))
+#+END_SRC
+
+#+BEGIN_SRC lisp
+(list :staff :piano-staff
+      (let ((ts (pw::arithm-ser 0 dtime (* (length midis-ls) dtime))))
+        (iter 
+          (for midis in midis-ls)
+          (for time in ts)
+          (collect (list (float time) 
+			 :duration (* dtime 0.9) 
+			 :notes midis
+			 :clef-number (if (< midi 60) 1 0))))))
+#+END_SRC
