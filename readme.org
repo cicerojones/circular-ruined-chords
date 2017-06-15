@@ -1197,3 +1197,7 @@ To return the "prime form" in numbers
      (pmc pcs-octs
 	  :sols-mode :all))
 #+END_SRC
+* saving pwgl skunked patches with git
+#+BEGIN_SRC bash
+git checkout -- file.ext
+#+END_SRC
