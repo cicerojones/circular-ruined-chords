@@ -1176,6 +1176,30 @@ In slime-scratch, you need to explicity "make a random state"
 #+BEGIN_SRC lisp
 
 #+END_SRC
+** iterating with nested mapcar
+#+BEGIN_SRC lisp
+(iter
+  (for x from 0 to 2)
+  (collect
+      (mapcar #'(lambda (deep-lst)
+	    (mapcar #'(lambda (lst) (nth x lst)) deep-lst))
+	      '(((0 1 2) (a b c) (7 8 9) (x y z)))
+	      )))
+#+END_SRC
+
+#+BEGIN_SRC lisp
+(let ((pc-list '((60 64 67) (61 65 68) (62 68 69))))
+  (iter
+    (for x from 0 to 2)
+    (collect 
+	(mapcar #'(lambda (lst) (nth x lst)) '((0 1 2) (60 61 62) (61 65 68))))))
+#+END_SRC
+
+#+RESULTS:
+| 0 | 60 | 61 |
+| 1 | 61 | 65 |
+| 2 | 62 | 68 |
+
 * pwgl textual lisp code
 ** pmc and pc-set theory
 To return the "prime form" in numbers
@@ -1197,7 +1221,7 @@ To return the "prime form" in numbers
      (pmc pcs-octs
 	  :sols-mode :all))
 #+END_SRC
-* saving pwgl skunked patches with git
+* getting out of pwgl skunked patches with git
 #+BEGIN_SRC bash
 git checkout -- file.ext
 #+END_SRC
