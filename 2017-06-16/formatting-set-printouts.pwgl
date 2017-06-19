@@ -1,0 +1,1082 @@
+(IN-PACKAGE :CCL)
+;; this patch was saved with PWGL version 1.0 beta RC 18 (0.9.18-201)
+(ASSERT-PATCH-SAVED-VERSION-NOT-NEWER-THAN (QUOTE ((0 9 18) 201)))
+(LET ((WIN (MAKE-INSTANCE (QUOTE PWGL-PW-WINDOW) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "destination" :CURVAL NIL :VALUE-STRING "nil") (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "control-string" :CURVAL "~{ ~{~a~10t ~a~}~%~}" :VALUE-STRING "\"~{ ~{~a~10t ~a~}~%~}\"") (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "format-arguments" :CURVAL (LIST (QUOTE COMMON-LISP-USER::A) (QUOTE COMMON-LISP-USER::B) (QUOTE COMMON-LISP-USER::C)) :VALUE-STRING "(a b c)" :CONNECTION NIL)) :X 1.7719999999999998D0 :Y 1.9360002098083493D0 :W 1.0479999809265137D0 :H 0.14159998486936093D0 :BOX-STRING "format" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 2 1) :ORIG-GROUPING-LIST (LIST 2) :EXTENSION-PATTERN (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE FORMAT) :OPEN-STATE-W 1.0479999809265137D0 :OPEN-STATE-H 0.14159998486936093D0 :CURRENT-EXTENSION-PATTERN-INDEX* 1) (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-NUMBOX-SUBVIEW) :BOX-STRING "card" :CURVAL 3 :MINVAL 1 :MAXVAL 12 :VALUE-STRING "3" :CONNECTION NIL)) :X 2.124000001490116D0 :Y 1.5800002083182334D0 :W 0.26 :H 0.1 :BOX-STRING "scs/card" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE SCS/CARD)) (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-MENUBOX-SUBVIEW) :BOX-STRING "function" :MINVAL 0 :MAXVAL 3 :MENU-LIST :SC-FUNCTION-LIST :MENU-LIST-STRING "prime") (MAKE-INSTANCE (QUOTE PWGL-HIERARCHICAL-MENUBOX-SUBVIEW) :BOX-STRING "sc-name" :MINVAL 0 :MAXVAL 18 :CONNECTION NIL :MENU-LIST :SC-NAME-LIST :MENU-LIST-STRING (LIST "0-1") :CURVAL2 3 :MENU-TITLES :SC-NAME-TITLE-LIST :MAXVAL2 12)) :X 1.2519999999999998D0 :Y 1.084000209808349D0 :W 0.78 :H 0.1 :BOX-STRING "sc-info" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 2) :ORIG-GROUPING-LIST (LIST 2) :X-PROPORTIONS (LIST (LIST 1.7 1)) :BORDER 0.012) :PW-FUNCTION (QUOTE SC-INFO)) (MAKE-INSTANCE (QUOTE PWGL-TEXT-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-TEXT-SUBVIEW) :BOX-STRING "text" :APPLICATION-WINDOW (MAKE-INSTANCE (QUOTE PWGL-FRED-WINDOW) :TITLE "Text-Editor" :X 65 :Y 22 :WIDTH 543 :HEIGHT 716) :VALUE-STRING "\" (0 1 2)                  3-1
+ (0 1 3)                  3-2A
+ (0 2 3)                  3-2B
+ (0 1 4)                  3-3A
+ (0 3 4)                  3-3B
+ (0 1 5)                  3-4A
+ (0 4 5)                  3-4B
+ (0 1 6)                  3-5A
+ (0 5 6)                  3-5B
+ (0 2 4)                  3-6
+ (0 2 5)                  3-7A
+ (0 3 5)                  3-7B
+ (0 2 6)                  3-8A
+ (0 4 6)                  3-8B
+ (0 2 7)                  3-9
+ (0 3 6)                  3-10
+ (0 3 7)                  3-11A
+ (0 4 7)                  3-11B
+ (0 4 8)                  3-12
+ (0 1 2 3)                4-1
+ (0 1 2 4)                4-2A
+ (0 2 3 4)                4-2B
+ (0 1 3 4)                4-3
+ (0 1 2 5)                4-4A
+ (0 3 4 5)                4-4B
+ (0 1 2 6)                4-5A
+ (0 4 5 6)                4-5B
+ (0 1 2 7)                4-6
+ (0 1 4 5)                4-7
+ (0 1 5 6)                4-8
+ (0 1 6 7)                4-9
+ (0 2 3 5)                4-10
+ (0 1 3 5)                4-11A
+ (0 2 4 5)                4-11B
+ (0 2 3 6)                4-12A
+ (0 3 4 6)                4-12B
+ (0 1 3 6)                4-13A
+ (0 3 5 6)                4-13B
+ (0 2 3 7)                4-14A
+ (0 4 5 7)                4-14B
+ (0 1 4 6)                4-Z15A
+ (0 2 5 6)                4-Z15B
+ (0 1 5 7)                4-16A
+ (0 2 6 7)                4-16B
+ (0 3 4 7)                4-17
+ (0 1 4 7)                4-18A
+ (0 3 6 7)                4-18B
+ (0 1 4 8)                4-19A
+ (0 3 4 8)                4-19B
+ (0 1 5 8)                4-20
+ (0 2 4 6)                4-21
+ (0 2 4 7)                4-22A
+ (0 3 5 7)                4-22B
+ (0 2 5 7)                4-23
+ (0 2 4 8)                4-24
+ (0 2 6 8)                4-25
+ (0 3 5 8)                4-26
+ (0 2 5 8)                4-27A
+ (0 3 6 8)                4-27B
+ (0 3 6 9)                4-28
+ (0 1 3 7)                4-Z29A
+ (0 4 6 7)                4-Z29B
+ (0 1 2 3 4)              5-1
+ (0 1 2 3 5)              5-2A
+ (0 2 3 4 5)              5-2B
+ (0 1 2 4 5)              5-3A
+ (0 1 3 4 5)              5-3B
+ (0 1 2 3 6)              5-4A
+ (0 3 4 5 6)              5-4B
+ (0 1 2 3 7)              5-5A
+ (0 4 5 6 7)              5-5B
+ (0 1 2 5 6)              5-6A
+ (0 1 4 5 6)              5-6B
+ (0 1 2 6 7)              5-7A
+ (0 1 5 6 7)              5-7B
+ (0 2 3 4 6)              5-8
+ (0 1 2 4 6)              5-9A
+ (0 2 4 5 6)              5-9B
+ (0 1 3 4 6)              5-10A
+ (0 2 3 5 6)              5-10B
+ (0 2 3 4 7)              5-11A
+ (0 3 4 5 7)              5-11B
+ (0 1 3 5 6)              5-Z12
+ (0 1 2 4 8)              5-13A
+ (0 2 3 4 8)              5-13B
+ (0 1 2 5 7)              5-14A
+ (0 2 5 6 7)              5-14B
+ (0 1 2 6 8)              5-15
+ (0 1 3 4 7)              5-16A
+ (0 3 4 6 7)              5-16B
+ (0 1 3 4 8)              5-Z17
+ (0 1 4 5 7)              5-Z18A
+ (0 2 3 6 7)              5-Z18B
+ (0 1 3 6 7)              5-19A
+ (0 1 4 6 7)              5-19B
+ (0 1 3 7 8)              5-20A
+ (0 1 5 7 8)              5-20B
+ (0 1 4 5 8)              5-21A
+ (0 3 4 7 8)              5-21B
+ (0 1 4 7 8)              5-22
+ (0 2 3 5 7)              5-23A
+ (0 2 4 5 7)              5-23B
+ (0 1 3 5 7)              5-24A
+ (0 2 4 6 7)              5-24B
+ (0 2 3 5 8)              5-25A
+ (0 3 5 6 8)              5-25B
+ (0 2 4 5 8)              5-26A
+ (0 3 4 6 8)              5-26B
+ (0 1 3 5 8)              5-27A
+ (0 3 5 7 8)              5-27B
+ (0 2 3 6 8)              5-28A
+ (0 2 5 6 8)              5-28B
+ (0 1 3 6 8)              5-29A
+ (0 2 5 7 8)              5-29B
+ (0 1 4 6 8)              5-30A
+ (0 2 4 7 8)              5-30B
+ (0 1 3 6 9)              5-31A
+ (0 2 3 6 9)              5-31B
+ (0 1 4 6 9)              5-32A
+ (0 1 4 7 9)              5-32B
+ (0 2 4 6 8)              5-33
+ (0 2 4 6 9)              5-34
+ (0 2 4 7 9)              5-35
+ (0 1 2 4 7)              5-Z36A
+ (0 3 5 6 7)              5-Z36B
+ (0 3 4 5 8)              5-Z37
+ (0 1 2 5 8)              5-Z38A
+ (0 3 6 7 8)              5-Z38B
+ (0 1 2 3 4 5)            6-1
+ (0 1 2 3 4 6)            6-2A
+ (0 2 3 4 5 6)            6-2B
+ (0 1 2 3 5 6)            6-Z3A
+ (0 1 3 4 5 6)            6-Z3B
+ (0 1 2 4 5 6)            6-Z4
+ (0 1 2 3 6 7)            6-5A
+ (0 1 4 5 6 7)            6-5B
+ (0 1 2 5 6 7)            6-Z6
+ (0 1 2 6 7 8)            6-7
+ (0 2 3 4 5 7)            6-8
+ (0 1 2 3 5 7)            6-9A
+ (0 2 4 5 6 7)            6-9B
+ (0 1 3 4 5 7)            6-Z10A
+ (0 2 3 4 6 7)            6-Z10B
+ (0 1 2 4 5 7)            6-Z11A
+ (0 2 3 5 6 7)            6-Z11B
+ (0 1 2 4 6 7)            6-Z12A
+ (0 1 3 5 6 7)            6-Z12B
+ (0 1 3 4 6 7)            6-Z13
+ (0 1 3 4 5 8)            6-14A
+ (0 3 4 5 7 8)            6-14B
+ (0 1 2 4 5 8)            6-15A
+ (0 3 4 6 7 8)            6-15B
+ (0 1 4 5 6 8)            6-16A
+ (0 2 3 4 7 8)            6-16B
+ (0 1 2 4 7 8)            6-Z17A
+ (0 1 4 6 7 8)            6-Z17B
+ (0 1 2 5 7 8)            6-18A
+ (0 1 3 6 7 8)            6-18B
+ (0 1 3 4 7 8)            6-Z19A
+ (0 1 4 5 7 8)            6-Z19B
+ (0 1 4 5 8 9)            6-20
+ (0 2 3 4 6 8)            6-21A
+ (0 2 4 5 6 8)            6-21B
+ (0 1 2 4 6 8)            6-22A
+ (0 2 4 6 7 8)            6-22B
+ (0 2 3 5 6 8)            6-Z23
+ (0 1 3 4 6 8)            6-Z24A
+ (0 2 4 5 7 8)            6-Z24B
+ (0 1 3 5 6 8)            6-Z25A
+ (0 2 3 5 7 8)            6-Z25B
+ (0 1 3 5 7 8)            6-Z26
+ (0 1 3 4 6 9)            6-27A
+ (0 2 3 5 6 9)            6-27B
+ (0 1 3 5 6 9)            6-Z28
+ (0 1 3 6 8 9)            6-Z29
+ (0 1 3 6 7 9)            6-30A
+ (0 2 3 6 8 9)            6-30B
+ (0 1 3 5 8 9)            6-31A
+ (0 1 4 6 8 9)            6-31B
+ (0 2 4 5 7 9)            6-32
+ (0 2 3 5 7 9)            6-33A
+ (0 2 4 6 7 9)            6-33B
+ (0 1 3 5 7 9)            6-34A
+ (0 2 4 6 8 9)            6-34B
+ (0 2 4 6 8 10)           6-35
+ (0 1 2 3 4 7)            6-Z36A
+ (0 3 4 5 6 7)            6-Z36B
+ (0 1 2 3 4 8)            6-Z37
+ (0 1 2 3 7 8)            6-Z38
+ (0 2 3 4 5 8)            6-Z39A
+ (0 3 4 5 6 8)            6-Z39B
+ (0 1 2 3 5 8)            6-Z40A
+ (0 3 5 6 7 8)            6-Z40B
+ (0 1 2 3 6 8)            6-Z41A
+ (0 2 5 6 7 8)            6-Z41B
+ (0 1 2 3 6 9)            6-Z42
+ (0 1 2 5 6 8)            6-Z43A
+ (0 2 3 6 7 8)            6-Z43B
+ (0 1 2 5 6 9)            6-Z44A
+ (0 1 2 5 8 9)            6-Z44B
+ (0 2 3 4 6 9)            6-Z45
+ (0 1 2 4 6 9)            6-Z46A
+ (0 2 4 5 6 9)            6-Z46B
+ (0 1 2 4 7 9)            6-Z47A
+ (0 2 3 4 7 9)            6-Z47B
+ (0 1 2 5 7 9)            6-Z48
+ (0 1 3 4 7 9)            6-Z49
+ (0 1 4 6 7 9)            6-Z50
+ (0 1 2 3 4 5 6)          7-1
+ (0 1 2 3 4 5 7)          7-2A
+ (0 2 3 4 5 6 7)          7-2B
+ (0 1 2 3 4 5 8)          7-3A
+ (0 3 4 5 6 7 8)          7-3B
+ (0 1 2 3 4 6 7)          7-4A
+ (0 1 3 4 5 6 7)          7-4B
+ (0 1 2 3 5 6 7)          7-5A
+ (0 1 2 4 5 6 7)          7-5B
+ (0 1 2 3 4 7 8)          7-6A
+ (0 1 4 5 6 7 8)          7-6B
+ (0 1 2 3 6 7 8)          7-7A
+ (0 1 2 5 6 7 8)          7-7B
+ (0 2 3 4 5 6 8)          7-8
+ (0 1 2 3 4 6 8)          7-9A
+ (0 2 4 5 6 7 8)          7-9B
+ (0 1 2 3 4 6 9)          7-10A
+ (0 2 3 4 5 6 9)          7-10B
+ (0 1 3 4 5 6 8)          7-11A
+ (0 2 3 4 5 7 8)          7-11B
+ (0 1 2 3 4 7 9)          7-Z12
+ (0 1 2 4 5 6 8)          7-13A
+ (0 2 3 4 6 7 8)          7-13B
+ (0 1 2 3 5 7 8)          7-14A
+ (0 1 3 5 6 7 8)          7-14B
+ (0 1 2 4 6 7 8)          7-15
+ (0 1 2 3 5 6 9)          7-16A
+ (0 1 3 4 5 6 9)          7-16B
+ (0 1 2 4 5 6 9)          7-Z17
+ (0 1 2 3 5 8 9)          7-Z18A
+ (0 1 4 6 7 8 9)          7-Z18B
+ (0 1 2 3 6 7 9)          7-19A
+ (0 1 2 3 6 8 9)          7-19B
+ (0 1 2 4 7 8 9)          7-20A
+ (0 1 2 5 7 8 9)          7-20B
+ (0 1 2 4 5 8 9)          7-21A
+ (0 1 3 4 5 8 9)          7-21B
+ (0 1 2 5 6 8 9)          7-22
+ (0 2 3 4 5 7 9)          7-23A
+ (0 2 4 5 6 7 9)          7-23B
+ (0 1 2 3 5 7 9)          7-24A
+ (0 2 4 6 7 8 9)          7-24B
+ (0 2 3 4 6 7 9)          7-25A
+ (0 2 3 5 6 7 9)          7-25B
+ (0 1 3 4 5 7 9)          7-26A
+ (0 2 4 5 6 8 9)          7-26B
+ (0 1 2 4 5 7 9)          7-27A
+ (0 2 4 5 7 8 9)          7-27B
+ (0 1 3 5 6 7 9)          7-28A
+ (0 2 3 4 6 8 9)          7-28B
+ (0 1 2 4 6 7 9)          7-29A
+ (0 2 3 5 7 8 9)          7-29B
+ (0 1 2 4 6 8 9)          7-30A
+ (0 1 3 5 7 8 9)          7-30B
+ (0 1 3 4 6 7 9)          7-31A
+ (0 2 3 5 6 8 9)          7-31B
+ (0 1 3 4 6 8 9)          7-32A
+ (0 1 3 5 6 8 9)          7-32B
+ (0 1 2 4 6 8 10)         7-33
+ (0 1 3 4 6 8 10)         7-34
+ (0 1 3 5 6 8 10)         7-35
+ (0 1 2 3 5 6 8)          7-Z36A
+ (0 2 3 5 6 7 8)          7-Z36B
+ (0 1 3 4 5 7 8)          7-Z37
+ (0 1 2 4 5 7 8)          7-Z38A
+ (0 1 3 4 6 7 8)          7-Z38B
+ (0 1 2 3 4 5 6 7)        8-1
+ (0 1 2 3 4 5 6 8)        8-2A
+ (0 2 3 4 5 6 7 8)        8-2B
+ (0 1 2 3 4 5 6 9)        8-3
+ (0 1 2 3 4 5 7 8)        8-4A
+ (0 1 3 4 5 6 7 8)        8-4B
+ (0 1 2 3 4 6 7 8)        8-5A
+ (0 1 2 4 5 6 7 8)        8-5B
+ (0 1 2 3 5 6 7 8)        8-6
+ (0 1 2 3 4 5 8 9)        8-7
+ (0 1 2 3 4 7 8 9)        8-8
+ (0 1 2 3 6 7 8 9)        8-9
+ (0 2 3 4 5 6 7 9)        8-10
+ (0 1 2 3 4 5 7 9)        8-11A
+ (0 2 4 5 6 7 8 9)        8-11B
+ (0 1 3 4 5 6 7 9)        8-12A
+ (0 2 3 4 5 6 8 9)        8-12B
+ (0 1 2 3 4 6 7 9)        8-13A
+ (0 2 3 5 6 7 8 9)        8-13B
+ (0 1 2 4 5 6 7 9)        8-14A
+ (0 2 3 4 5 7 8 9)        8-14B
+ (0 1 2 3 4 6 8 9)        8-Z15A
+ (0 1 3 5 6 7 8 9)        8-Z15B
+ (0 1 2 3 5 7 8 9)        8-16A
+ (0 1 2 4 6 7 8 9)        8-16B
+ (0 1 3 4 5 6 8 9)        8-17
+ (0 1 2 3 5 6 8 9)        8-18A
+ (0 1 3 4 6 7 8 9)        8-18B
+ (0 1 2 4 5 6 8 9)        8-19A
+ (0 1 3 4 5 7 8 9)        8-19B
+ (0 1 2 4 5 7 8 9)        8-20
+ (0 1 2 3 4 6 8 10)       8-21
+ (0 1 2 3 5 6 8 10)       8-22A
+ (0 1 2 3 5 7 9 10)       8-22B
+ (0 1 2 3 5 7 8 10)       8-23
+ (0 1 2 4 5 6 8 10)       8-24
+ (0 1 2 4 6 7 8 10)       8-25
+ (0 1 2 4 5 7 9 10)       8-26
+ (0 1 2 4 5 7 8 10)       8-27A
+ (0 1 2 4 6 7 9 10)       8-27B
+ (0 1 3 4 6 7 9 10)       8-28
+ (0 1 2 3 5 6 7 9)        8-Z29A
+ (0 2 3 4 6 7 8 9)        8-Z29B
+ (0 1 2 3 4 5 6 7 8)      9-1
+ (0 1 2 3 4 5 6 7 9)      9-2A
+ (0 2 3 4 5 6 7 8 9)      9-2B
+ (0 1 2 3 4 5 6 8 9)      9-3A
+ (0 1 3 4 5 6 7 8 9)      9-3B
+ (0 1 2 3 4 5 7 8 9)      9-4A
+ (0 1 2 4 5 6 7 8 9)      9-4B
+ (0 1 2 3 4 6 7 8 9)      9-5A
+ (0 1 2 3 5 6 7 8 9)      9-5B
+ (0 1 2 3 4 5 6 8 10)     9-6
+ (0 1 2 3 4 5 7 8 10)     9-7A
+ (0 1 2 3 4 5 7 9 10)     9-7B
+ (0 1 2 3 4 6 7 8 10)     9-8A
+ (0 1 2 3 4 6 8 9 10)     9-8B
+ (0 1 2 3 5 6 7 8 10)     9-9
+ (0 1 2 3 4 6 7 9 10)     9-10
+ (0 1 2 3 5 6 7 9 10)     9-11A
+ (0 1 2 3 5 6 8 9 10)     9-11B
+ (0 1 2 4 5 6 8 9 10)     9-12
+\"" :CONNECTION NIL :X-OFFSET -0.024000003 :Y-OFFSET 0.108)) :X 0.058233637646100345D0 :Y -0.31490596793461645D0 :W 0.42510073536530113D0 :H 0.31230453 :BOX-STRING "text-box" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE TEXT-BOX) :OPEN-STATE-W 0.42510073536530113D0 :OPEN-STATE-H 0.31230453) (MAKE-INSTANCE (QUOTE PWGL-CODE-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-FREE-VALUE-BOX-SUBVIEW) :BOX-STRING "card" :CURVAL 4 :VALUE-STRING "4" :ARG-NAME (QUOTE CARD) :ARG-TYPE :VAR)) :X 1.2600000000000003D0 :Y 1.9520005950927728D0 :W 0.3599999904632565D0 :H 0.1 :BOX-STRING "code-box" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE CODE-BOX) :OPEN-STATE-W 0.3599999904632565D0 :OPEN-STATE-H 0.09300000037252909D0 :TEXT "(iterate 
+ (for n in (system::scs/card card))
+ (collect (list n (prime n))))") (MAKE-INSTANCE (QUOTE PWGL-TEXT-BOX) :R 1.0 :G 0.2532481 :B 0.09192073 :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-TEXT-SUBVIEW) :R 1.0 :G 0.2532481 :B 0.09192073 :BOX-STRING "text" :APPLICATION-WINDOW (MAKE-INSTANCE (QUOTE PWGL-FRED-WINDOW) :TITLE "tetrachords map" :X 65 :Y 22 :WIDTH 543 :HEIGHT 716) :VALUE-STRING "4-1       (0 1 2 3)
+4-2A      (0 1 2 4)
+4-2B      (0 2 3 4)
+4-3       (0 1 3 4)
+4-4A      (0 1 2 5)
+4-4B      (0 3 4 5)
+4-5A      (0 1 2 6)
+4-5B      (0 4 5 6)
+4-6       (0 1 2 7)
+4-7       (0 1 4 5)
+4-8       (0 1 5 6)
+4-9       (0 1 6 7)
+4-10      (0 2 3 5)
+4-11A     (0 1 3 5)
+4-11B     (0 2 4 5)
+4-12A     (0 2 3 6)
+4-12B     (0 3 4 6)
+4-13A     (0 1 3 6)
+4-13B     (0 3 5 6)
+4-14A     (0 2 3 7)
+4-14B     (0 4 5 7)
+4-Z15A    (0 1 4 6)
+4-Z15B    (0 2 5 6)
+4-16A     (0 1 5 7)
+4-16B     (0 2 6 7)
+4-17      (0 3 4 7)
+4-18A     (0 1 4 7)
+4-18B     (0 3 6 7)
+4-19A     (0 1 4 8)
+4-19B     (0 3 4 8)
+4-20      (0 1 5 8)
+4-21      (0 2 4 6)
+4-22A     (0 2 4 7)
+4-22B     (0 3 5 7)
+4-23      (0 2 5 7)
+4-24      (0 2 4 8)
+4-25      (0 2 6 8)
+4-26      (0 3 5 8)
+4-27A     (0 2 5 8)
+4-27B     (0 3 6 8)
+4-28      (0 3 6 9)
+4-Z29A    (0 1 3 7)
+4-Z29B    (0 4 6 7)
+")) :X 3.5582336406263338D0 :Y 2.289094029085151D0 :W 0.5611007353653013D0 :H 2.3483045265674587D0 :BOX-STRING "text-box" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE TEXT-BOX) :OPEN-STATE-W 0.5611007353653013D0 :OPEN-STATE-H 2.3483045265674587D0 :FORMAT-ARGS (LIST :FORMAT T :COLUMNS 1 :PRINT-ESCAPE NIL)) (MAKE-INSTANCE (QUOTE PW-BOX-MAP-BUFFER) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "list" :CURVAL (LIST 3 4 5 6 7 8 9) :VALUE-STRING "(3 4 5 6 7 8 9)")) :X 1.3320000000000003D0 :Y 1.6920007076263426D0 :W 0.3849999880790711D0 :H 0.10000000149011612D0 :BOX-STRING "pwgl-enum" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :EXTENSION-PATTERN (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE PWGL-ENUM) :OPEN-STATE-W 0.3849999880790711D0 :OPEN-STATE-H 0.10000000149011612D0) (MAKE-INSTANCE (QUOTE PW-BOX-MAP) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "enum" :CURVAL "()" :VALUE-STRING "()" :CONNECTION NIL) (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "patch" :CURVAL "()" :VALUE-STRING "()" :CONNECTION NIL)) :X 1.538999997019768D0 :Y 1.3960006957054132D0 :W 0.52 :H 0.1 :BOX-STRING "pwgl-map" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 2) :ORIG-GROUPING-LIST (LIST 2) :EXTENSION-PATTERN (LIST 1) :EXTENSION-LIMIT 5 :BORDER 0.012) :PW-FUNCTION (QUOTE PWGL-MAP)) (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "lst" :CURVAL (LIST (LIST 0) (LIST 1)) :VALUE-STRING "((0) (1))" :CONNECTION NIL)) :X 1.8199999999999999D0 :Y 1.2320007076263422D0 :W 0.26 :H 0.1 :BOX-STRING "flat" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE PATCH-WORK:FLAT)) (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "argument" :CURVAL "()" :VALUE-STRING "()" :CONNECTION NIL) (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "args" :VALUE-STRING "0" :CONNECTION NIL)) :X 2.36D0 :Y 1.016000707626342D0 :W 0.26 :H 0.17359999 :BOX-STRING "list" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1 1) :ORIG-GROUPING-LIST (LIST 1) :EXTENSION-PATTERN (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE LIST) :CURRENT-EXTENSION-PATTERN-INDEX* 1) (MAKE-INSTANCE (QUOTE PWGL-CODE-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-FREE-VALUE-BOX-SUBVIEW) :BOX-STRING "big-lst" :CONNECTION NIL :ARG-NAME (QUOTE BIG-LST) :ARG-TYPE :VAR)) :X 2.488D0 :Y 0.7160007076263422D0 :W 0.33599999046325646D0 :H 0.1 :BOX-STRING "code-box" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE CODE-BOX) :OPEN-STATE-W 0.33599999046325646D0 :OPEN-STATE-H 0.10900000037252866D0 :TEXT "(apply #'mapcar #'list big-lst)") (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "sequence" :CURVAL "(0 1)" :VALUE-STRING "(0 1)" :CONNECTION NIL) (MAKE-INSTANCE (QUOTE PWGL-NUMBOX-SUBVIEW) :BOX-STRING "start" :MINVAL 0 :VALUE-STRING "0") (MAKE-INSTANCE (QUOTE PWGL-NUMBOX-SUBVIEW) :BOX-STRING "end" :CURVAL 20 :MINVAL 0 :VALUE-STRING "20")) :X 1.6360000000000002D0 :Y 0.7160007076263422D0 :W 0.26 :H 0.2268 :BOX-STRING "subseq" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1 1 1) :ORIG-GROUPING-LIST (LIST 1 1) :EXTENSION-PATTERN (LIST 1) :EXTENSION-LIMIT 3 :X-PROPORTIONS (LIST (LIST 1) (LIST 1) (LIST 1)) :BORDER 0.012) :PW-FUNCTION (QUOTE SUBSEQ) :CURRENT-EXTENSION-PATTERN-INDEX* 1) (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "list" :CURVAL "(0 1)" :VALUE-STRING "(0 1)" :CONNECTION NIL)) :X 2.084D0 :Y 0.7480007076263422D0 :W 0.26 :H 0.1 :BOX-STRING "first" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE FIRST)) (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "destination" :CURVAL NIL :VALUE-STRING "nil") (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "control-string" :CURVAL "~{ ~{~a~25t ~a~}~%~}" :VALUE-STRING "\"~{ ~{~a~25t ~a~}~%~}\"") (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "format-arguments" :CURVAL (LIST (QUOTE COMMON-LISP-USER::A) (QUOTE COMMON-LISP-USER::B) (QUOTE COMMON-LISP-USER::C)) :VALUE-STRING "(a b c)")) :X 0.14800000149011572D0 :Y -0.15199979168176636D0 :W 1.0479999809265137D0 :H 0.14159998486936093D0 :BOX-STRING "format" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 2 1) :ORIG-GROUPING-LIST (LIST 2) :EXTENSION-PATTERN (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE FORMAT) :OPEN-STATE-W 1.0479999809265137D0 :OPEN-STATE-H 0.14159998486936093D0 :CURRENT-EXTENSION-PATTERN-INDEX* 1) (MAKE-INSTANCE (QUOTE PWGL-TEXT-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-TEXT-SUBVIEW) :BOX-STRING "text" :APPLICATION-WINDOW (MAKE-INSTANCE (QUOTE PWGL-FRED-WINDOW) :TITLE "Text-Editor" :X 65 :Y 22 :WIDTH 543 :HEIGHT 716) :VALUE-STRING "\"              (0 1 2)  | 3-1     |
+              (0 1 3)  | 3-2A    |
+              (0 2 3)  | 3-2B    |
+              (0 1 4)  | 3-3A    |
+              (0 3 4)  | 3-3B    |
+              (0 1 5)  | 3-4A    |
+              (0 4 5)  | 3-4B    |
+              (0 1 6)  | 3-5A    |
+              (0 5 6)  | 3-5B    |
+              (0 2 4)  | 3-6     |
+              (0 2 5)  | 3-7A    |
+              (0 3 5)  | 3-7B    |
+              (0 2 6)  | 3-8A    |
+              (0 4 6)  | 3-8B    |
+              (0 2 7)  | 3-9     |
+              (0 3 6)  | 3-10    |
+              (0 3 7)  | 3-11A   |
+              (0 4 7)  | 3-11B   |
+              (0 4 8)  | 3-12    |
+            (0 1 2 3)  | 4-1     |
+            (0 1 2 4)  | 4-2A    |
+            (0 2 3 4)  | 4-2B    |
+            (0 1 3 4)  | 4-3     |
+            (0 1 2 5)  | 4-4A    |
+            (0 3 4 5)  | 4-4B    |
+            (0 1 2 6)  | 4-5A    |
+            (0 4 5 6)  | 4-5B    |
+            (0 1 2 7)  | 4-6     |
+            (0 1 4 5)  | 4-7     |
+            (0 1 5 6)  | 4-8     |
+            (0 1 6 7)  | 4-9     |
+            (0 2 3 5)  | 4-10    |
+            (0 1 3 5)  | 4-11A   |
+            (0 2 4 5)  | 4-11B   |
+            (0 2 3 6)  | 4-12A   |
+            (0 3 4 6)  | 4-12B   |
+            (0 1 3 6)  | 4-13A   |
+            (0 3 5 6)  | 4-13B   |
+            (0 2 3 7)  | 4-14A   |
+            (0 4 5 7)  | 4-14B   |
+            (0 1 4 6)  | 4-Z15A  |
+            (0 2 5 6)  | 4-Z15B  |
+            (0 1 5 7)  | 4-16A   |
+            (0 2 6 7)  | 4-16B   |
+            (0 3 4 7)  | 4-17    |
+            (0 1 4 7)  | 4-18A   |
+            (0 3 6 7)  | 4-18B   |
+            (0 1 4 8)  | 4-19A   |
+            (0 3 4 8)  | 4-19B   |
+            (0 1 5 8)  | 4-20    |
+            (0 2 4 6)  | 4-21    |
+            (0 2 4 7)  | 4-22A   |
+            (0 3 5 7)  | 4-22B   |
+            (0 2 5 7)  | 4-23    |
+            (0 2 4 8)  | 4-24    |
+            (0 2 6 8)  | 4-25    |
+            (0 3 5 8)  | 4-26    |
+            (0 2 5 8)  | 4-27A   |
+            (0 3 6 8)  | 4-27B   |
+            (0 3 6 9)  | 4-28    |
+            (0 1 3 7)  | 4-Z29A  |
+            (0 4 6 7)  | 4-Z29B  |
+          (0 1 2 3 4)  | 5-1     |
+          (0 1 2 3 5)  | 5-2A    |
+          (0 2 3 4 5)  | 5-2B    |
+          (0 1 2 4 5)  | 5-3A    |
+          (0 1 3 4 5)  | 5-3B    |
+          (0 1 2 3 6)  | 5-4A    |
+          (0 3 4 5 6)  | 5-4B    |
+          (0 1 2 3 7)  | 5-5A    |
+          (0 4 5 6 7)  | 5-5B    |
+          (0 1 2 5 6)  | 5-6A    |
+          (0 1 4 5 6)  | 5-6B    |
+          (0 1 2 6 7)  | 5-7A    |
+          (0 1 5 6 7)  | 5-7B    |
+          (0 2 3 4 6)  | 5-8     |
+          (0 1 2 4 6)  | 5-9A    |
+          (0 2 4 5 6)  | 5-9B    |
+          (0 1 3 4 6)  | 5-10A   |
+          (0 2 3 5 6)  | 5-10B   |
+          (0 2 3 4 7)  | 5-11A   |
+          (0 3 4 5 7)  | 5-11B   |
+          (0 1 3 5 6)  | 5-Z12   |
+          (0 1 2 4 8)  | 5-13A   |
+          (0 2 3 4 8)  | 5-13B   |
+          (0 1 2 5 7)  | 5-14A   |
+          (0 2 5 6 7)  | 5-14B   |
+          (0 1 2 6 8)  | 5-15    |
+          (0 1 3 4 7)  | 5-16A   |
+          (0 3 4 6 7)  | 5-16B   |
+          (0 1 3 4 8)  | 5-Z17   |
+          (0 1 4 5 7)  | 5-Z18A  |
+          (0 2 3 6 7)  | 5-Z18B  |
+          (0 1 3 6 7)  | 5-19A   |
+          (0 1 4 6 7)  | 5-19B   |
+          (0 1 3 7 8)  | 5-20A   |
+          (0 1 5 7 8)  | 5-20B   |
+          (0 1 4 5 8)  | 5-21A   |
+          (0 3 4 7 8)  | 5-21B   |
+          (0 1 4 7 8)  | 5-22    |
+          (0 2 3 5 7)  | 5-23A   |
+          (0 2 4 5 7)  | 5-23B   |
+          (0 1 3 5 7)  | 5-24A   |
+          (0 2 4 6 7)  | 5-24B   |
+          (0 2 3 5 8)  | 5-25A   |
+          (0 3 5 6 8)  | 5-25B   |
+          (0 2 4 5 8)  | 5-26A   |
+          (0 3 4 6 8)  | 5-26B   |
+          (0 1 3 5 8)  | 5-27A   |
+          (0 3 5 7 8)  | 5-27B   |
+          (0 2 3 6 8)  | 5-28A   |
+          (0 2 5 6 8)  | 5-28B   |
+          (0 1 3 6 8)  | 5-29A   |
+          (0 2 5 7 8)  | 5-29B   |
+          (0 1 4 6 8)  | 5-30A   |
+          (0 2 4 7 8)  | 5-30B   |
+          (0 1 3 6 9)  | 5-31A   |
+          (0 2 3 6 9)  | 5-31B   |
+          (0 1 4 6 9)  | 5-32A   |
+          (0 1 4 7 9)  | 5-32B   |
+          (0 2 4 6 8)  | 5-33    |
+          (0 2 4 6 9)  | 5-34    |
+          (0 2 4 7 9)  | 5-35    |
+          (0 1 2 4 7)  | 5-Z36A  |
+          (0 3 5 6 7)  | 5-Z36B  |
+          (0 3 4 5 8)  | 5-Z37   |
+          (0 1 2 5 8)  | 5-Z38A  |
+          (0 3 6 7 8)  | 5-Z38B  |
+        (0 1 2 3 4 5)  | 6-1     |
+        (0 1 2 3 4 6)  | 6-2A    |
+        (0 2 3 4 5 6)  | 6-2B    |
+        (0 1 2 3 5 6)  | 6-Z3A   |
+        (0 1 3 4 5 6)  | 6-Z3B   |
+        (0 1 2 4 5 6)  | 6-Z4    |
+        (0 1 2 3 6 7)  | 6-5A    |
+        (0 1 4 5 6 7)  | 6-5B    |
+        (0 1 2 5 6 7)  | 6-Z6    |
+        (0 1 2 6 7 8)  | 6-7     |
+        (0 2 3 4 5 7)  | 6-8     |
+        (0 1 2 3 5 7)  | 6-9A    |
+        (0 2 4 5 6 7)  | 6-9B    |
+        (0 1 3 4 5 7)  | 6-Z10A  |
+        (0 2 3 4 6 7)  | 6-Z10B  |
+        (0 1 2 4 5 7)  | 6-Z11A  |
+        (0 2 3 5 6 7)  | 6-Z11B  |
+        (0 1 2 4 6 7)  | 6-Z12A  |
+        (0 1 3 5 6 7)  | 6-Z12B  |
+        (0 1 3 4 6 7)  | 6-Z13   |
+        (0 1 3 4 5 8)  | 6-14A   |
+        (0 3 4 5 7 8)  | 6-14B   |
+        (0 1 2 4 5 8)  | 6-15A   |
+        (0 3 4 6 7 8)  | 6-15B   |
+        (0 1 4 5 6 8)  | 6-16A   |
+        (0 2 3 4 7 8)  | 6-16B   |
+        (0 1 2 4 7 8)  | 6-Z17A  |
+        (0 1 4 6 7 8)  | 6-Z17B  |
+        (0 1 2 5 7 8)  | 6-18A   |
+        (0 1 3 6 7 8)  | 6-18B   |
+        (0 1 3 4 7 8)  | 6-Z19A  |
+        (0 1 4 5 7 8)  | 6-Z19B  |
+        (0 1 4 5 8 9)  | 6-20    |
+        (0 2 3 4 6 8)  | 6-21A   |
+        (0 2 4 5 6 8)  | 6-21B   |
+        (0 1 2 4 6 8)  | 6-22A   |
+        (0 2 4 6 7 8)  | 6-22B   |
+        (0 2 3 5 6 8)  | 6-Z23   |
+        (0 1 3 4 6 8)  | 6-Z24A  |
+        (0 2 4 5 7 8)  | 6-Z24B  |
+        (0 1 3 5 6 8)  | 6-Z25A  |
+        (0 2 3 5 7 8)  | 6-Z25B  |
+        (0 1 3 5 7 8)  | 6-Z26   |
+        (0 1 3 4 6 9)  | 6-27A   |
+        (0 2 3 5 6 9)  | 6-27B   |
+        (0 1 3 5 6 9)  | 6-Z28   |
+        (0 1 3 6 8 9)  | 6-Z29   |
+        (0 1 3 6 7 9)  | 6-30A   |
+        (0 2 3 6 8 9)  | 6-30B   |
+        (0 1 3 5 8 9)  | 6-31A   |
+        (0 1 4 6 8 9)  | 6-31B   |
+        (0 2 4 5 7 9)  | 6-32    |
+        (0 2 3 5 7 9)  | 6-33A   |
+        (0 2 4 6 7 9)  | 6-33B   |
+        (0 1 3 5 7 9)  | 6-34A   |
+        (0 2 4 6 8 9)  | 6-34B   |
+       (0 2 4 6 8 10)  | 6-35    |
+        (0 1 2 3 4 7)  | 6-Z36A  |
+        (0 3 4 5 6 7)  | 6-Z36B  |
+        (0 1 2 3 4 8)  | 6-Z37   |
+        (0 1 2 3 7 8)  | 6-Z38   |
+        (0 2 3 4 5 8)  | 6-Z39A  |
+        (0 3 4 5 6 8)  | 6-Z39B  |
+        (0 1 2 3 5 8)  | 6-Z40A  |
+        (0 3 5 6 7 8)  | 6-Z40B  |
+        (0 1 2 3 6 8)  | 6-Z41A  |
+        (0 2 5 6 7 8)  | 6-Z41B  |
+        (0 1 2 3 6 9)  | 6-Z42   |
+        (0 1 2 5 6 8)  | 6-Z43A  |
+        (0 2 3 6 7 8)  | 6-Z43B  |
+        (0 1 2 5 6 9)  | 6-Z44A  |
+        (0 1 2 5 8 9)  | 6-Z44B  |
+        (0 2 3 4 6 9)  | 6-Z45   |
+        (0 1 2 4 6 9)  | 6-Z46A  |
+        (0 2 4 5 6 9)  | 6-Z46B  |
+        (0 1 2 4 7 9)  | 6-Z47A  |
+        (0 2 3 4 7 9)  | 6-Z47B  |
+        (0 1 2 5 7 9)  | 6-Z48   |
+        (0 1 3 4 7 9)  | 6-Z49   |
+        (0 1 4 6 7 9)  | 6-Z50   |
+      (0 1 2 3 4 5 6)  | 7-1     |
+      (0 1 2 3 4 5 7)  | 7-2A    |
+      (0 2 3 4 5 6 7)  | 7-2B    |
+      (0 1 2 3 4 5 8)  | 7-3A    |
+      (0 3 4 5 6 7 8)  | 7-3B    |
+      (0 1 2 3 4 6 7)  | 7-4A    |
+      (0 1 3 4 5 6 7)  | 7-4B    |
+      (0 1 2 3 5 6 7)  | 7-5A    |
+      (0 1 2 4 5 6 7)  | 7-5B    |
+      (0 1 2 3 4 7 8)  | 7-6A    |
+      (0 1 4 5 6 7 8)  | 7-6B    |
+      (0 1 2 3 6 7 8)  | 7-7A    |
+      (0 1 2 5 6 7 8)  | 7-7B    |
+      (0 2 3 4 5 6 8)  | 7-8     |
+      (0 1 2 3 4 6 8)  | 7-9A    |
+      (0 2 4 5 6 7 8)  | 7-9B    |
+      (0 1 2 3 4 6 9)  | 7-10A   |
+      (0 2 3 4 5 6 9)  | 7-10B   |
+      (0 1 3 4 5 6 8)  | 7-11A   |
+      (0 2 3 4 5 7 8)  | 7-11B   |
+      (0 1 2 3 4 7 9)  | 7-Z12   |
+      (0 1 2 4 5 6 8)  | 7-13A   |
+      (0 2 3 4 6 7 8)  | 7-13B   |
+      (0 1 2 3 5 7 8)  | 7-14A   |
+      (0 1 3 5 6 7 8)  | 7-14B   |
+      (0 1 2 4 6 7 8)  | 7-15    |
+      (0 1 2 3 5 6 9)  | 7-16A   |
+      (0 1 3 4 5 6 9)  | 7-16B   |
+      (0 1 2 4 5 6 9)  | 7-Z17   |
+      (0 1 2 3 5 8 9)  | 7-Z18A  |
+      (0 1 4 6 7 8 9)  | 7-Z18B  |
+      (0 1 2 3 6 7 9)  | 7-19A   |
+      (0 1 2 3 6 8 9)  | 7-19B   |
+      (0 1 2 4 7 8 9)  | 7-20A   |
+      (0 1 2 5 7 8 9)  | 7-20B   |
+      (0 1 2 4 5 8 9)  | 7-21A   |
+      (0 1 3 4 5 8 9)  | 7-21B   |
+      (0 1 2 5 6 8 9)  | 7-22    |
+      (0 2 3 4 5 7 9)  | 7-23A   |
+      (0 2 4 5 6 7 9)  | 7-23B   |
+      (0 1 2 3 5 7 9)  | 7-24A   |
+      (0 2 4 6 7 8 9)  | 7-24B   |
+      (0 2 3 4 6 7 9)  | 7-25A   |
+      (0 2 3 5 6 7 9)  | 7-25B   |
+      (0 1 3 4 5 7 9)  | 7-26A   |
+      (0 2 4 5 6 8 9)  | 7-26B   |
+      (0 1 2 4 5 7 9)  | 7-27A   |
+      (0 2 4 5 7 8 9)  | 7-27B   |
+      (0 1 3 5 6 7 9)  | 7-28A   |
+      (0 2 3 4 6 8 9)  | 7-28B   |
+      (0 1 2 4 6 7 9)  | 7-29A   |
+      (0 2 3 5 7 8 9)  | 7-29B   |
+      (0 1 2 4 6 8 9)  | 7-30A   |
+      (0 1 3 5 7 8 9)  | 7-30B   |
+      (0 1 3 4 6 7 9)  | 7-31A   |
+      (0 2 3 5 6 8 9)  | 7-31B   |
+      (0 1 3 4 6 8 9)  | 7-32A   |
+      (0 1 3 5 6 8 9)  | 7-32B   |
+     (0 1 2 4 6 8 10)  | 7-33    |
+     (0 1 3 4 6 8 10)  | 7-34    |
+     (0 1 3 5 6 8 10)  | 7-35    |
+      (0 1 2 3 5 6 8)  | 7-Z36A  |
+      (0 2 3 5 6 7 8)  | 7-Z36B  |
+      (0 1 3 4 5 7 8)  | 7-Z37   |
+      (0 1 2 4 5 7 8)  | 7-Z38A  |
+      (0 1 3 4 6 7 8)  | 7-Z38B  |
+    (0 1 2 3 4 5 6 7)  | 8-1     |
+    (0 1 2 3 4 5 6 8)  | 8-2A    |
+    (0 2 3 4 5 6 7 8)  | 8-2B    |
+    (0 1 2 3 4 5 6 9)  | 8-3     |
+    (0 1 2 3 4 5 7 8)  | 8-4A    |
+    (0 1 3 4 5 6 7 8)  | 8-4B    |
+    (0 1 2 3 4 6 7 8)  | 8-5A    |
+    (0 1 2 4 5 6 7 8)  | 8-5B    |
+    (0 1 2 3 5 6 7 8)  | 8-6     |
+    (0 1 2 3 4 5 8 9)  | 8-7     |
+    (0 1 2 3 4 7 8 9)  | 8-8     |
+    (0 1 2 3 6 7 8 9)  | 8-9     |
+    (0 2 3 4 5 6 7 9)  | 8-10    |
+    (0 1 2 3 4 5 7 9)  | 8-11A   |
+    (0 2 4 5 6 7 8 9)  | 8-11B   |
+    (0 1 3 4 5 6 7 9)  | 8-12A   |
+    (0 2 3 4 5 6 8 9)  | 8-12B   |
+    (0 1 2 3 4 6 7 9)  | 8-13A   |
+    (0 2 3 5 6 7 8 9)  | 8-13B   |
+    (0 1 2 4 5 6 7 9)  | 8-14A   |
+    (0 2 3 4 5 7 8 9)  | 8-14B   |
+    (0 1 2 3 4 6 8 9)  | 8-Z15A  |
+    (0 1 3 5 6 7 8 9)  | 8-Z15B  |
+    (0 1 2 3 5 7 8 9)  | 8-16A   |
+    (0 1 2 4 6 7 8 9)  | 8-16B   |
+    (0 1 3 4 5 6 8 9)  | 8-17    |
+    (0 1 2 3 5 6 8 9)  | 8-18A   |
+    (0 1 3 4 6 7 8 9)  | 8-18B   |
+    (0 1 2 4 5 6 8 9)  | 8-19A   |
+    (0 1 3 4 5 7 8 9)  | 8-19B   |
+    (0 1 2 4 5 7 8 9)  | 8-20    |
+   (0 1 2 3 4 6 8 10)  | 8-21    |
+   (0 1 2 3 5 6 8 10)  | 8-22A   |
+   (0 1 2 3 5 7 9 10)  | 8-22B   |
+   (0 1 2 3 5 7 8 10)  | 8-23    |
+   (0 1 2 4 5 6 8 10)  | 8-24    |
+   (0 1 2 4 6 7 8 10)  | 8-25    |
+   (0 1 2 4 5 7 9 10)  | 8-26    |
+   (0 1 2 4 5 7 8 10)  | 8-27A   |
+   (0 1 2 4 6 7 9 10)  | 8-27B   |
+   (0 1 3 4 6 7 9 10)  | 8-28    |
+    (0 1 2 3 5 6 7 9)  | 8-Z29A  |
+    (0 2 3 4 6 7 8 9)  | 8-Z29B  |
+  (0 1 2 3 4 5 6 7 8)  | 9-1     |
+  (0 1 2 3 4 5 6 7 9)  | 9-2A    |
+  (0 2 3 4 5 6 7 8 9)  | 9-2B    |
+  (0 1 2 3 4 5 6 8 9)  | 9-3A    |
+  (0 1 3 4 5 6 7 8 9)  | 9-3B    |
+  (0 1 2 3 4 5 7 8 9)  | 9-4A    |
+  (0 1 2 4 5 6 7 8 9)  | 9-4B    |
+  (0 1 2 3 4 6 7 8 9)  | 9-5A    |
+  (0 1 2 3 5 6 7 8 9)  | 9-5B    |
+ (0 1 2 3 4 5 6 8 10)  | 9-6     |
+ (0 1 2 3 4 5 7 8 10)  | 9-7A    |
+ (0 1 2 3 4 5 7 9 10)  | 9-7B    |
+ (0 1 2 3 4 6 7 8 10)  | 9-8A    |
+ (0 1 2 3 4 6 8 9 10)  | 9-8B    |
+ (0 1 2 3 5 6 7 8 10)  | 9-9     |
+ (0 1 2 3 4 6 7 9 10)  | 9-10    |
+ (0 1 2 3 5 6 7 9 10)  | 9-11A   |
+ (0 1 2 3 5 6 8 9 10)  | 9-11B   |
+ (0 1 2 4 5 6 8 9 10)  | 9-12    |
+ \"" :CONNECTION NIL :X-OFFSET -0.024000003 :Y-OFFSET 0.108)) :X 1.3542336391362167D0 :Y 0.06909403057526653D0 :W 0.6731007353653014D0 :H 0.33630452656745913D0 :BOX-STRING "text-box" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE TEXT-BOX) :OPEN-STATE-W 0.6731007353653014D0 :OPEN-STATE-H 0.33630452656745913D0) (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "destination" :CURVAL NIL :VALUE-STRING "nil") (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "control-string" :CURVAL "~{ ~{~20@a  | ~7a |~}~%~} " :VALUE-STRING "\"~{ ~{~20@a  | ~7a |~}~%~} \"") (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "format-arguments" :CURVAL (LIST (QUOTE COMMON-LISP-USER::A) (QUOTE COMMON-LISP-USER::B) (QUOTE COMMON-LISP-USER::C)) :VALUE-STRING "(a b c)" :CONNECTION NIL)) :X 1.6280000029802322D0 :Y 0.33600020682811716D0 :W 0.8199999809265144D0 :H 0.18159998486936097D0 :BOX-STRING "format" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 2 1) :ORIG-GROUPING-LIST (LIST 2) :EXTENSION-PATTERN (LIST 1) :X-PROPORTIONS (LIST (LIST 0.21085596294498643D0 1) (LIST 1)) :BORDER 0.012) :PW-FUNCTION (QUOTE FORMAT) :OPEN-STATE-W 0.8199999809265144D0 :OPEN-STATE-H 0.18159998486936097D0 :CURRENT-EXTENSION-PATTERN-INDEX* 1) (MAKE-INSTANCE (QUOTE PWGL-TEXT-BOX) :R 0.5181 :G 0.6081 :B 0.6081 :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-TEXT-SUBVIEW) :BOX-STRING "text" :APPLICATION-WINDOW (MAKE-INSTANCE (QUOTE PWGL-FRED-WINDOW) :TITLE "Text-Editor" :X 3 :Y 22 :WIDTH 282 :HEIGHT 849) :VALUE-STRING "\"                 (0 1 2)       3-1
+                 (0 1 3)      3-2A
+                 (0 2 3)      3-2B
+                 (0 1 4)      3-3A
+                 (0 3 4)      3-3B
+                 (0 1 5)      3-4A
+                 (0 4 5)      3-4B
+                 (0 1 6)      3-5A
+                 (0 5 6)      3-5B
+                 (0 2 4)       3-6
+                 (0 2 5)      3-7A
+                 (0 3 5)      3-7B
+                 (0 2 6)      3-8A
+                 (0 4 6)      3-8B
+                 (0 2 7)       3-9
+                 (0 3 6)      3-10
+                 (0 3 7)     3-11A
+                 (0 4 7)     3-11B
+                 (0 4 8)      3-12
+               (0 1 2 3)       4-1
+               (0 1 2 4)      4-2A
+               (0 2 3 4)      4-2B
+               (0 1 3 4)       4-3
+               (0 1 2 5)      4-4A
+               (0 3 4 5)      4-4B
+               (0 1 2 6)      4-5A
+               (0 4 5 6)      4-5B
+               (0 1 2 7)       4-6
+               (0 1 4 5)       4-7
+               (0 1 5 6)       4-8
+               (0 1 6 7)       4-9
+               (0 2 3 5)      4-10
+               (0 1 3 5)     4-11A
+               (0 2 4 5)     4-11B
+               (0 2 3 6)     4-12A
+               (0 3 4 6)     4-12B
+               (0 1 3 6)     4-13A
+               (0 3 5 6)     4-13B
+               (0 2 3 7)     4-14A
+               (0 4 5 7)     4-14B
+               (0 1 4 6)    4-Z15A
+               (0 2 5 6)    4-Z15B
+               (0 1 5 7)     4-16A
+               (0 2 6 7)     4-16B
+               (0 3 4 7)      4-17
+               (0 1 4 7)     4-18A
+               (0 3 6 7)     4-18B
+               (0 1 4 8)     4-19A
+               (0 3 4 8)     4-19B
+               (0 1 5 8)      4-20
+               (0 2 4 6)      4-21
+               (0 2 4 7)     4-22A
+               (0 3 5 7)     4-22B
+               (0 2 5 7)      4-23
+               (0 2 4 8)      4-24
+               (0 2 6 8)      4-25
+               (0 3 5 8)      4-26
+               (0 2 5 8)     4-27A
+               (0 3 6 8)     4-27B
+               (0 3 6 9)      4-28
+               (0 1 3 7)    4-Z29A
+               (0 4 6 7)    4-Z29B
+             (0 1 2 3 4)       5-1
+             (0 1 2 3 5)      5-2A
+             (0 2 3 4 5)      5-2B
+             (0 1 2 4 5)      5-3A
+             (0 1 3 4 5)      5-3B
+             (0 1 2 3 6)      5-4A
+             (0 3 4 5 6)      5-4B
+             (0 1 2 3 7)      5-5A
+             (0 4 5 6 7)      5-5B
+             (0 1 2 5 6)      5-6A
+             (0 1 4 5 6)      5-6B
+             (0 1 2 6 7)      5-7A
+             (0 1 5 6 7)      5-7B
+             (0 2 3 4 6)       5-8
+             (0 1 2 4 6)      5-9A
+             (0 2 4 5 6)      5-9B
+             (0 1 3 4 6)     5-10A
+             (0 2 3 5 6)     5-10B
+             (0 2 3 4 7)     5-11A
+             (0 3 4 5 7)     5-11B
+             (0 1 3 5 6)     5-Z12
+             (0 1 2 4 8)     5-13A
+             (0 2 3 4 8)     5-13B
+             (0 1 2 5 7)     5-14A
+             (0 2 5 6 7)     5-14B
+             (0 1 2 6 8)      5-15
+             (0 1 3 4 7)     5-16A
+             (0 3 4 6 7)     5-16B
+             (0 1 3 4 8)     5-Z17
+             (0 1 4 5 7)    5-Z18A
+             (0 2 3 6 7)    5-Z18B
+             (0 1 3 6 7)     5-19A
+             (0 1 4 6 7)     5-19B
+             (0 1 3 7 8)     5-20A
+             (0 1 5 7 8)     5-20B
+             (0 1 4 5 8)     5-21A
+             (0 3 4 7 8)     5-21B
+             (0 1 4 7 8)      5-22
+             (0 2 3 5 7)     5-23A
+             (0 2 4 5 7)     5-23B
+             (0 1 3 5 7)     5-24A
+             (0 2 4 6 7)     5-24B
+             (0 2 3 5 8)     5-25A
+             (0 3 5 6 8)     5-25B
+             (0 2 4 5 8)     5-26A
+             (0 3 4 6 8)     5-26B
+             (0 1 3 5 8)     5-27A
+             (0 3 5 7 8)     5-27B
+             (0 2 3 6 8)     5-28A
+             (0 2 5 6 8)     5-28B
+             (0 1 3 6 8)     5-29A
+             (0 2 5 7 8)     5-29B
+             (0 1 4 6 8)     5-30A
+             (0 2 4 7 8)     5-30B
+             (0 1 3 6 9)     5-31A
+             (0 2 3 6 9)     5-31B
+             (0 1 4 6 9)     5-32A
+             (0 1 4 7 9)     5-32B
+             (0 2 4 6 8)      5-33
+             (0 2 4 6 9)      5-34
+             (0 2 4 7 9)      5-35
+             (0 1 2 4 7)    5-Z36A
+             (0 3 5 6 7)    5-Z36B
+             (0 3 4 5 8)     5-Z37
+             (0 1 2 5 8)    5-Z38A
+             (0 3 6 7 8)    5-Z38B
+           (0 1 2 3 4 5)       6-1
+           (0 1 2 3 4 6)      6-2A
+           (0 2 3 4 5 6)      6-2B
+           (0 1 2 3 5 6)     6-Z3A
+           (0 1 3 4 5 6)     6-Z3B
+           (0 1 2 4 5 6)      6-Z4
+           (0 1 2 3 6 7)      6-5A
+           (0 1 4 5 6 7)      6-5B
+           (0 1 2 5 6 7)      6-Z6
+           (0 1 2 6 7 8)       6-7
+           (0 2 3 4 5 7)       6-8
+           (0 1 2 3 5 7)      6-9A
+           (0 2 4 5 6 7)      6-9B
+           (0 1 3 4 5 7)    6-Z10A
+           (0 2 3 4 6 7)    6-Z10B
+           (0 1 2 4 5 7)    6-Z11A
+           (0 2 3 5 6 7)    6-Z11B
+           (0 1 2 4 6 7)    6-Z12A
+           (0 1 3 5 6 7)    6-Z12B
+           (0 1 3 4 6 7)     6-Z13
+           (0 1 3 4 5 8)     6-14A
+           (0 3 4 5 7 8)     6-14B
+           (0 1 2 4 5 8)     6-15A
+           (0 3 4 6 7 8)     6-15B
+           (0 1 4 5 6 8)     6-16A
+           (0 2 3 4 7 8)     6-16B
+           (0 1 2 4 7 8)    6-Z17A
+           (0 1 4 6 7 8)    6-Z17B
+           (0 1 2 5 7 8)     6-18A
+           (0 1 3 6 7 8)     6-18B
+           (0 1 3 4 7 8)    6-Z19A
+           (0 1 4 5 7 8)    6-Z19B
+           (0 1 4 5 8 9)      6-20
+           (0 2 3 4 6 8)     6-21A
+           (0 2 4 5 6 8)     6-21B
+           (0 1 2 4 6 8)     6-22A
+           (0 2 4 6 7 8)     6-22B
+           (0 2 3 5 6 8)     6-Z23
+           (0 1 3 4 6 8)    6-Z24A
+           (0 2 4 5 7 8)    6-Z24B
+           (0 1 3 5 6 8)    6-Z25A
+           (0 2 3 5 7 8)    6-Z25B
+           (0 1 3 5 7 8)     6-Z26
+           (0 1 3 4 6 9)     6-27A
+           (0 2 3 5 6 9)     6-27B
+           (0 1 3 5 6 9)     6-Z28
+           (0 1 3 6 8 9)     6-Z29
+           (0 1 3 6 7 9)     6-30A
+           (0 2 3 6 8 9)     6-30B
+           (0 1 3 5 8 9)     6-31A
+           (0 1 4 6 8 9)     6-31B
+           (0 2 4 5 7 9)      6-32
+           (0 2 3 5 7 9)     6-33A
+           (0 2 4 6 7 9)     6-33B
+           (0 1 3 5 7 9)     6-34A
+           (0 2 4 6 8 9)     6-34B
+          (0 2 4 6 8 10)      6-35
+           (0 1 2 3 4 7)    6-Z36A
+           (0 3 4 5 6 7)    6-Z36B
+           (0 1 2 3 4 8)     6-Z37
+           (0 1 2 3 7 8)     6-Z38
+           (0 2 3 4 5 8)    6-Z39A
+           (0 3 4 5 6 8)    6-Z39B
+           (0 1 2 3 5 8)    6-Z40A
+           (0 3 5 6 7 8)    6-Z40B
+           (0 1 2 3 6 8)    6-Z41A
+           (0 2 5 6 7 8)    6-Z41B
+           (0 1 2 3 6 9)     6-Z42
+           (0 1 2 5 6 8)    6-Z43A
+           (0 2 3 6 7 8)    6-Z43B
+           (0 1 2 5 6 9)    6-Z44A
+           (0 1 2 5 8 9)    6-Z44B
+           (0 2 3 4 6 9)     6-Z45
+           (0 1 2 4 6 9)    6-Z46A
+           (0 2 4 5 6 9)    6-Z46B
+           (0 1 2 4 7 9)    6-Z47A
+           (0 2 3 4 7 9)    6-Z47B
+           (0 1 2 5 7 9)     6-Z48
+           (0 1 3 4 7 9)     6-Z49
+           (0 1 4 6 7 9)     6-Z50
+         (0 1 2 3 4 5 6)       7-1
+         (0 1 2 3 4 5 7)      7-2A
+         (0 2 3 4 5 6 7)      7-2B
+         (0 1 2 3 4 5 8)      7-3A
+         (0 3 4 5 6 7 8)      7-3B
+         (0 1 2 3 4 6 7)      7-4A
+         (0 1 3 4 5 6 7)      7-4B
+         (0 1 2 3 5 6 7)      7-5A
+         (0 1 2 4 5 6 7)      7-5B
+         (0 1 2 3 4 7 8)      7-6A
+         (0 1 4 5 6 7 8)      7-6B
+         (0 1 2 3 6 7 8)      7-7A
+         (0 1 2 5 6 7 8)      7-7B
+         (0 2 3 4 5 6 8)       7-8
+         (0 1 2 3 4 6 8)      7-9A
+         (0 2 4 5 6 7 8)      7-9B
+         (0 1 2 3 4 6 9)     7-10A
+         (0 2 3 4 5 6 9)     7-10B
+         (0 1 3 4 5 6 8)     7-11A
+         (0 2 3 4 5 7 8)     7-11B
+         (0 1 2 3 4 7 9)     7-Z12
+         (0 1 2 4 5 6 8)     7-13A
+         (0 2 3 4 6 7 8)     7-13B
+         (0 1 2 3 5 7 8)     7-14A
+         (0 1 3 5 6 7 8)     7-14B
+         (0 1 2 4 6 7 8)      7-15
+         (0 1 2 3 5 6 9)     7-16A
+         (0 1 3 4 5 6 9)     7-16B
+         (0 1 2 4 5 6 9)     7-Z17
+         (0 1 2 3 5 8 9)    7-Z18A
+         (0 1 4 6 7 8 9)    7-Z18B
+         (0 1 2 3 6 7 9)     7-19A
+         (0 1 2 3 6 8 9)     7-19B
+         (0 1 2 4 7 8 9)     7-20A
+         (0 1 2 5 7 8 9)     7-20B
+         (0 1 2 4 5 8 9)     7-21A
+         (0 1 3 4 5 8 9)     7-21B
+         (0 1 2 5 6 8 9)      7-22
+         (0 2 3 4 5 7 9)     7-23A
+         (0 2 4 5 6 7 9)     7-23B
+         (0 1 2 3 5 7 9)     7-24A
+         (0 2 4 6 7 8 9)     7-24B
+         (0 2 3 4 6 7 9)     7-25A
+         (0 2 3 5 6 7 9)     7-25B
+         (0 1 3 4 5 7 9)     7-26A
+         (0 2 4 5 6 8 9)     7-26B
+         (0 1 2 4 5 7 9)     7-27A
+         (0 2 4 5 7 8 9)     7-27B
+         (0 1 3 5 6 7 9)     7-28A
+         (0 2 3 4 6 8 9)     7-28B
+         (0 1 2 4 6 7 9)     7-29A
+         (0 2 3 5 7 8 9)     7-29B
+         (0 1 2 4 6 8 9)     7-30A
+         (0 1 3 5 7 8 9)     7-30B
+         (0 1 3 4 6 7 9)     7-31A
+         (0 2 3 5 6 8 9)     7-31B
+         (0 1 3 4 6 8 9)     7-32A
+         (0 1 3 5 6 8 9)     7-32B
+        (0 1 2 4 6 8 10)      7-33
+        (0 1 3 4 6 8 10)      7-34
+        (0 1 3 5 6 8 10)      7-35
+         (0 1 2 3 5 6 8)    7-Z36A
+         (0 2 3 5 6 7 8)    7-Z36B
+         (0 1 3 4 5 7 8)     7-Z37
+         (0 1 2 4 5 7 8)    7-Z38A
+         (0 1 3 4 6 7 8)    7-Z38B
+       (0 1 2 3 4 5 6 7)       8-1
+       (0 1 2 3 4 5 6 8)      8-2A
+       (0 2 3 4 5 6 7 8)      8-2B
+       (0 1 2 3 4 5 6 9)       8-3
+       (0 1 2 3 4 5 7 8)      8-4A
+       (0 1 3 4 5 6 7 8)      8-4B
+       (0 1 2 3 4 6 7 8)      8-5A
+       (0 1 2 4 5 6 7 8)      8-5B
+       (0 1 2 3 5 6 7 8)       8-6
+       (0 1 2 3 4 5 8 9)       8-7
+       (0 1 2 3 4 7 8 9)       8-8
+       (0 1 2 3 6 7 8 9)       8-9
+       (0 2 3 4 5 6 7 9)      8-10
+       (0 1 2 3 4 5 7 9)     8-11A
+       (0 2 4 5 6 7 8 9)     8-11B
+       (0 1 3 4 5 6 7 9)     8-12A
+       (0 2 3 4 5 6 8 9)     8-12B
+       (0 1 2 3 4 6 7 9)     8-13A
+       (0 2 3 5 6 7 8 9)     8-13B
+       (0 1 2 4 5 6 7 9)     8-14A
+       (0 2 3 4 5 7 8 9)     8-14B
+       (0 1 2 3 4 6 8 9)    8-Z15A
+       (0 1 3 5 6 7 8 9)    8-Z15B
+       (0 1 2 3 5 7 8 9)     8-16A
+       (0 1 2 4 6 7 8 9)     8-16B
+       (0 1 3 4 5 6 8 9)      8-17
+       (0 1 2 3 5 6 8 9)     8-18A
+       (0 1 3 4 6 7 8 9)     8-18B
+       (0 1 2 4 5 6 8 9)     8-19A
+       (0 1 3 4 5 7 8 9)     8-19B
+       (0 1 2 4 5 7 8 9)      8-20
+      (0 1 2 3 4 6 8 10)      8-21
+      (0 1 2 3 5 6 8 10)     8-22A
+      (0 1 2 3 5 7 9 10)     8-22B
+      (0 1 2 3 5 7 8 10)      8-23
+      (0 1 2 4 5 6 8 10)      8-24
+      (0 1 2 4 6 7 8 10)      8-25
+      (0 1 2 4 5 7 9 10)      8-26
+      (0 1 2 4 5 7 8 10)     8-27A
+      (0 1 2 4 6 7 9 10)     8-27B
+      (0 1 3 4 6 7 9 10)      8-28
+       (0 1 2 3 5 6 7 9)    8-Z29A
+       (0 2 3 4 6 7 8 9)    8-Z29B
+     (0 1 2 3 4 5 6 7 8)       9-1
+     (0 1 2 3 4 5 6 7 9)      9-2A
+     (0 2 3 4 5 6 7 8 9)      9-2B
+     (0 1 2 3 4 5 6 8 9)      9-3A
+     (0 1 3 4 5 6 7 8 9)      9-3B
+     (0 1 2 3 4 5 7 8 9)      9-4A
+     (0 1 2 4 5 6 7 8 9)      9-4B
+     (0 1 2 3 4 6 7 8 9)      9-5A
+     (0 1 2 3 5 6 7 8 9)      9-5B
+    (0 1 2 3 4 5 6 8 10)       9-6
+    (0 1 2 3 4 5 7 8 10)      9-7A
+    (0 1 2 3 4 5 7 9 10)      9-7B
+    (0 1 2 3 4 6 7 8 10)      9-8A
+    (0 1 2 3 4 6 8 9 10)      9-8B
+    (0 1 2 3 5 6 7 8 10)       9-9
+    (0 1 2 3 4 6 7 9 10)      9-10
+    (0 1 2 3 5 6 7 9 10)     9-11A
+    (0 1 2 3 5 6 8 9 10)     9-11B
+    (0 1 2 4 5 6 8 9 10)      9-12
+ \"" :CONNECTION NIL :X-OFFSET -0.024000003 :Y-OFFSET 0.108)) :X 2.5782336406263325D0 :Y 0.005094029085150442D0 :W 0.6731007353653014D0 :H 0.33630452656745913D0 :BOX-STRING "text-box" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.012) :PW-FUNCTION (QUOTE TEXT-BOX) :OPEN-STATE-W 0.6731007353653014D0 :OPEN-STATE-H 0.33630452656745913D0) (MAKE-INSTANCE (QUOTE PWGL-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "destination" :CURVAL NIL :VALUE-STRING "nil") (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "control-string" :CURVAL "~{ ~{~a~a~}~%~} " :VALUE-STRING "\"~{ ~{~a~a~}~%~} \"" :CONNECTION NIL) (MAKE-INSTANCE (QUOTE PWGL-VALUE-BOX-SUBVIEW) :BOX-STRING "format-arguments" :CURVAL (LIST (QUOTE COMMON-LISP-USER::A) (QUOTE COMMON-LISP-USER::B) (QUOTE COMMON-LISP-USER::C)) :VALUE-STRING "(a b c)" :CONNECTION NIL)) :X 2.6600000044703483D0 :Y 0.3400002053380007D0 :W 0.8199999809265144D0 :H 0.18159998486936097D0 :BOX-STRING "format" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 2 1) :ORIG-GROUPING-LIST (LIST 2) :EXTENSION-PATTERN (LIST 1) :X-PROPORTIONS (LIST (LIST 0.21085596294498643D0 1) (LIST 1)) :BORDER 0.012) :PW-FUNCTION (QUOTE FORMAT) :OPEN-STATE-W 0.8199999809265144D0 :OPEN-STATE-H 0.18159998486936097D0 :CURRENT-EXTENSION-PATTERN-INDEX* 1) (MAKE-INSTANCE (QUOTE PWGL-CUSTOM-MENU-BOX) :PWGL-SUBVIEWS (LIST (MAKE-INSTANCE (QUOTE PWGL-CUSTOM-MENU-BOX-SUBVIEW) :R 1.0 :G 1.0 :B 1.0 :BOX-STRING "menu" :APPLICATION-WINDOW (MAKE-INSTANCE (QUOTE PWGL-FRED-WINDOW) :TITLE "Text-Editor" :X 277 :Y 73 :WIDTH 500 :HEIGHT 600) :CURVAL 12 :MINVAL 0 :MAXVAL 21 :VALUE-STRING "(
+ (\"none\" \"~{ ~{~0,1,0,,a~a~}~%~} \")
+ (\"7mincol\" \"~{ ~{~7,1,0,,a~a~}~%~} \")
+ (\"8mincol\" \"~{ ~{~8,1,0,,a~a~}~%~} \")
+ (\"9mincol\" \"~{ ~{~9,1,0,,a~a~}~%~} \")
+ (\"Tmincol\" \"~{ ~{~10,1,0,,a~a~}~%~} \")
+ (\"Emincol\" \"~{ ~{~11,1,0,,a~a~}~%~} \")
+ (\"Dmincol\" \"~{ ~{~12,1,0,,a~a~}~%~} \")
+ (\"13mincol\" \"~{ ~{~13,1,0,,a~a~}~%~} \")
+ (\"16mincol\" \"~{ ~{~16,1,0,,a~a~}~%~} \")
+ (\"19mincol\" \"~{ ~{~19,1,0,,a~a~}~%~} \")
+ (\"23mincolBEST\" \"~{ ~{~23,1,0,,a~a~}~%~} \")
+ (\"23mincol@\" \"~{ ~{~23,1,0,,@a~a~}~%~} \")
+ (\"23mincol@BEST@10\" \"~{ ~{~23,1,0,,@a~10@a~}~%~} \")
+ (\"26mincol\" \"~{ ~{~26,1,0,,a~a~}~%~} \")
+ (\"29mincol\" \"~{ ~{~29,1,0,,a~a~}~%~} \")
+ (\"33mincol\" \"~{ ~{~33,1,0,,a~a~}~%~} \")
+ (\"10mincol-rite\" \"~{ ~{~10a~a~}~%~} \")
+ (\"10mincol-left\" \"~{ ~{~10@a~a~}~%~} \")
+ (\"none with args\" \"~{ ~{~0,1,0,,a~a~}~%~} \")
+ (\"ok by far\" \"~{ ~{~0,1,10,,a~a~}~%~} \")
+ (\"not best\" \"~{ ~{~0,1,0,,a ~1,1,10,,@a~}~%~} \")
+ (\"best\" \"~{ ~{~0,1,5,,a~a~}~%~} \")
+)
+
+" :MENU-LIST-STRING (LIST "23mincol@" "~{ ~{~23,1,0,,@a~@a~}~%~} "))) :X 2.436000000000001D0 :Y 1.3320007076263423D0 :W 0.7260000000000004D0 :H 0.10400000149011612D0 :BOX-STRING "menu-box" :PWGL-OUTPUTS (LIST (MAKE-INSTANCE (QUOTE PWGL-OUTPUT))) :BOX-LAYOUT (MAKE-INSTANCE (QUOTE PWGL-BOX-LAYOUT) :GROUPING-LIST (LIST 1) :ORIG-GROUPING-LIST (LIST 1) :BORDER 0.0084) :PW-FUNCTION (QUOTE MENU-BOX) :OPEN-STATE-W 0.7260000000000004D0 :OPEN-STATE-H 0.10400000149011612D0 :MENU-ITEM-FORMAT :TITLE-ITEM)) :X 5 :Y 5 :TRANSLY 0.6479983398914337D0 :CONNECTIONS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 18 :OUT-BOX 0 :PWBOX2 17 :INPUT-BOX 1 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.2514999930523336D0 :DY -0.5524002480339261D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 10 :OUT-BOX 0 :PWBOX2 17 :INPUT-BOX 2 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.04900000426545725D0 :DY -0.38320024521835145D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 17 :OUT-BOX 0 :PWBOX2 16 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX -0.5618831775075388D0 :DY -0.04512922780895659D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 10 :OUT-BOX 0 :PWBOX2 15 :INPUT-BOX 2 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX -0.4009999964796007D0 :DY -0.3372002444732934D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 15 :OUT-BOX 0 :PWBOX2 14 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX -0.5618831775075388D0 :DY -0.04512922780895659D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 13 :OUT-BOX 0 :PWBOX2 3 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX -0.5618831775075388D0 :DY -0.04512922780895659D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 8 :OUT-BOX 0 :PWBOX2 9 :INPUT-BOX 1 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.20000000203028323D0 :DY -0.11019999440014372D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 12 :OUT-BOX 0 :PWBOX2 11 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX -0.29399999796971677D0 :DY 0.020300001665949807D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 9 :OUT-BOX 0 :PWBOX2 12 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX -0.2079999979697167D0 :DY -0.06260000487416973D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 9 :OUT-BOX 0 :PWBOX2 10 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX -0.29399999796971677D0 :DY -0.012600004874169679D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 2 :OUT-BOX 0 :PWBOX2 9 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.35400000679865485D0 :DY 6.002516001462066D-4)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 8 :OUT-BOX 0 :PWBOX2 2 :INPUT-BOX 1 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.027999988432973577D0 :DY -0.02340024714916944D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 7 :OUT-BOX 0 :PWBOX2 8 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.023500005904584898D0 :DY -0.06339999227970839D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 1 :OUT-BOX 0 :PWBOX2 7 :INPUT-BOX 1 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX -0.09250000903382882D0 :DY -0.05739975454658297D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 6 :OUT-BOX 0 :PWBOX2 1 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.28075000337138745D0 :DY 0.012599752105772577D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 6 :OUT-BOX 0 :PWBOX2 7 :INPUT-BOX 0 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.001250001136213541D0 :DY -0.11540000420063734D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0)) (MAKE-INSTANCE (QUOTE PWGL-CONNECTION) :PWBOX1 4 :OUT-BOX 0 :PWBOX2 0 :INPUT-BOX 2 :DRAW-MODE :LINE :BEZIER-SELECTOR1 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 1) :BEZIER-SELECTOR2 (MAKE-INSTANCE (QUOTE PWGL-BEZIER-SELECTOR) :POINT-NUM 2) :CONNECTION-POINTS (LIST (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.14700000203028307D0 :DY -0.017700186716392508D0)) :CONNECTION-POINT (MAKE-INSTANCE (QUOTE PWGL-CONNECTION-POINT-SELECTOR) :DX 0.0 :DY 0.0))) :X 331 :Y 22 :WIDTH 1060 :HEIGHT 755))) (WINDOW-SELECT WIN) WIN)
