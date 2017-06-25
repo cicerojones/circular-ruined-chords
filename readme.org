@@ -1,6 +1,7 @@
 * COMMENT Hello chords!
 * steps
 ** to iterate
+*** load library
 perchance to dream
 https://common-lisp.net/project/iterate/doc/index.html#Top
 
@@ -13,6 +14,9 @@ In the REPL buffer in SLIME you can also change packages with a REPL shortcut. T
 ;; (mapcar #'package-name (package-use-list :cl-user))
 #+END_SRC
 
+#+RESULTS:
+: #<Package "ITERATE">
+*** basic collect
 #+BEGIN_SRC lisp
 (iterate 
   (for n from 1 to 10)
@@ -21,17 +25,17 @@ In the REPL buffer in SLIME you can also change packages with a REPL shortcut. T
 
 #+RESULTS:
 | 1 | 4 | 9 | 16 | 25 | 36 | 49 | 64 | 81 | 100 |
-
+*** iterate in parallel
 #+BEGIN_SRC lisp
 (iterate 
-  (for n from 1 to 10)
+  (for n from 2 to 3)
   (for k in '(10 100))
   (collect (* k n)))
 #+END_SRC
 
 #+RESULTS:
-| 10 | 200 |
-
+| 20 | 300 |
+*** nested iterate loop
 #+BEGIN_SRC lisp
 (iterate 
   (for n from 1 to 10)
@@ -59,8 +63,6 @@ In the REPL buffer in SLIME you can also change packages with a REPL shortcut. T
  (collect (random2 0 10) into ys)
  (finally (return (mk-bpf xs ys))))
 #+END_SRC
-** 
-** 
 ** many pc-octaves
 #+BEGIN_SRC lisp
 (let ((pc-sets '((0 1 3) (0 4 8))))
@@ -1661,3 +1663,257 @@ git checkout -- file.ext
 #+BEGIN_SRC lisp
 (62 63 64 65 66 67 68 69 70 71)
 #+END_SRC
+* iterate and dotimes
+#+BEGIN_SRC lisp
+(let ((acc ())) (dotimes (x 4 acc) (push (loop for x from 0 to 3 collect x) acc)))
+#+END_SRC
+* add to 4 groups
+#+BEGIN_SRC lisp
+((3 1 0 0) (3 0 1 0) (3 0 0 1) (2 2 0 0) (2 1 1 0) (2 1 0 1) (2 0 2 0) (2 0 1 1) (2 0 0 2) (1 3 0 0) (1 2 1 0) (1 2 0 1) (1 1 2 0) (1 1 1 1) (1 1 0 2) (1 0 3 0) (1 0 2 1) (1 0 1 2) (1 0 0 3) (0 3 1 0) (0 3 0 1) (0 2 2 0) (0 2 1 1) (0 2 0 2) (0 1 3 0) (0 1 2 1) (0 1 1 2) (0 1 0 3) (0 0 3 1) (0 0 2 2) (0 0 1 3))
+#+END_SRC
+
+#+BEGIN_SRC lisp
+((3 3 -1 -1) (3 1 1 -1) (3 1 -1 1) (3 -1 3 -1) (3 -1 1 1) (3 -1 -1 3) (2 2 1 -1) (2 2 -1 1) (2 1 2 -1) (2 1 -1 2) (2 -1 2 1) (2 -1 1 2) (1 3 1 -1) (1 3 -1 1) (1 2 2 -1) (1 2 -1 2) (1 1 3 -1) (1 1 1 1) (1 1 -1 3) (1 -1 3 1) (1 -1 2 2) (1 -1 1 3) (-1 3 3 -1) (-1 3 1 1) (-1 3 -1 3) (-1 2 2 1) (-1 2 1 2) (-1 1 3 1) (-1 1 2 2) (-1 1 1 3) (-1 -1 3 3)))
+
+#+END_SRC
+* find examples
+** find . -maxdepth 1 -not -type d
+#+BEGIN_SRC bash
+find . -maxdepth 1 -not -type d
+#+END_SRC
+
+#+RESULTS:
+| ./#readme.org#       |
+| ./.DS_Store          |
+| ./.gitignore         |
+| ./problem-code.lisp~ |
+| ./problem2.lisp~     |
+| ./readme.org         |
+| ./readme.org~        |
+** find . \( -iname \*\\.pwgl\* \) -ls
+#+BEGIN_SRC bash
+find . \( -iname \*\\.pwgl\* \) -ls
+
+#+END_SRC
+
+#+RESULTS:
+| 17167399 |    96 | -rw-r--r-- | 1 | a | staff |   47779 | Jun | 15 | 10:32 | ./2017-06-13/daily-pc-set-example.pwgl                             |
+| 17172865 |    16 | -rw-r--r-- | 1 | a | staff |    8023 | Jun | 23 | 17:39 | ./2017-06-13/trichord-pcset-slider.pwgl                            |
+| 17173922 |   360 | -rw-r--r-- | 1 | a | staff |  181554 | Jun | 14 | 05:49 | ./2017-06-13/use-code-boxes-for-pcs.pwgl                           |
+| 17174549 |   272 | -rw-r--r-- | 1 | a | staff |  135458 | Jun | 15 | 12:55 | ./2017-06-14/permute-all-tn-octaves-of-cardinality.pwgl            |
+| 17184069 |   216 | -rw-r--r-- | 1 | a | staff |  109961 | Jun | 15 | 12:34 | ./2017-06-15/add-velocity-to-score-templates.pwgl                  |
+| 17185126 |   176 | -rw-r--r-- | 1 | a | staff |   89432 | Jun | 15 | 16:22 | ./2017-06-15/best-way-to-move-long-non-mensural.pwgl               |
+| 17184649 |   184 | -rw-r--r-- | 1 | a | staff |   90589 | Jun | 15 | 21:28 | ./2017-06-15/document-this-ultimate-pcset-listener.pwgl            |
+| 17185871 |   280 | -rw-r--r-- | 1 | a | staff |  141787 | Jun | 15 | 16:22 | ./2017-06-15/many-map-enums-with-score-editors.pwgl                |
+| 17187929 |    80 | -rw-r--r-- | 1 | a | staff |   37914 | Jun | 15 | 21:28 | ./2017-06-15/map-chords-to-voices.pwgl                             |
+| 17184496 |   104 | -rw-r--r-- | 1 | a | staff |   50754 | Jun | 15 | 12:57 | ./2017-06-15/simpler-gentler-random-trichord-template.pwgl         |
+| 17188157 |   472 | -rw-r--r-- | 1 | a | staff |  238923 | Jun | 16 | 17:13 | ./2017-06-15/ultimate-three-part-pc-harmonies.pwgl                 |
+| 17192091 |    40 | -rw-r--r-- | 1 | a | staff |   18289 | Jun | 16 | 21:14 | ./2017-06-16/choosing-equals-pcset-with-multiscore.pwgl            |
+| 17193167 |   120 | -rw-r--r-- | 1 | a | staff |   58394 | Jun | 18 | 21:47 | ./2017-06-16/formatting-set-printouts.pwgl                         |
+| 17189228 | 10768 | -rw-r--r-- | 1 | a | staff | 5509698 | Jun | 16 | 17:13 | ./2017-06-16/manipulating-sc4-10-score.pwgl                        |
+| 17211098 |    56 | -rw-r--r-- | 1 | a | staff |   28503 | Jun | 18 | 23:20 | ./2017-06-18/collecting-all-multiscore-pmc-rules-in-a-measure.pwgl |
+| 17215701 |    96 | -rw-r--r-- | 1 | a | staff |   45611 | Jun | 19 | 18:49 | ./2017-06-19/formatting-and-writing-out-to-file.pwgl               |
+| 17217161 |   144 | -rw-r--r-- | 1 | a | staff |   72349 | Jun | 19 | 23:41 | ./2017-06-19/no-adjacent-chord-dups-with-single-pcset.pwgl         |
+| 17216643 |    40 | -rw-r--r-- | 1 | a | staff |   18175 | Jun | 19 | 19:05 | ./2017-06-19/openGL-text-macros.pwgl                               |
+| 17216925 |    88 | -rw-r--r-- | 1 | a | staff |   40967 | Jun | 19 | 19:18 | ./2017-06-19/simplified-by-set-pmc-searchspace.pwgl                |
+| 17217876 |    64 | -rw-r--r-- | 1 | a | staff |   29980 | Jun | 19 | 22:35 | ./2017-06-19/understanding-BPFs-and-interpolation.pwgl             |
+| 17220191 |    32 | -rw-r--r-- | 1 | a | staff |   16192 | Jun | 22 | 09:43 | ./2017-06-20/alea-and-breakpoint-functions.pwgl                    |
+| 17229060 |     8 | -rw-r--r-- | 1 | a | staff |     275 | Jun | 22 | 10:22 | ./2017-06-22/#empty-pwgl-patch.pwgl#                               |
+| 17232063 |     8 | -rw-r--r-- | 1 | a | staff |     635 | Jun | 23 | 06:01 | ./2017-06-22/abstraction-box.pwgl                                  |
+| 17229121 |     8 | -rw-r--r-- | 1 | a | staff |    1536 | Jun | 22 | 10:28 | ./2017-06-22/chord-editor.pwgl                                     |
+| 17229068 |     8 | -rw-r--r-- | 1 | a | staff |     579 | Jun | 22 | 10:24 | ./2017-06-22/code-box.pwgl                                         |
+| 17229057 |     8 | -rw-r--r-- | 1 | a | staff |     275 | Jun | 22 | 10:20 | ./2017-06-22/empty-pwgl-patch.pwgl                                 |
+| 17229087 |     8 | -rw-r--r-- | 1 | a | staff |    1083 | Jun | 22 | 10:25 | ./2017-06-22/enp-constructor.pwgl                                  |
+| 17229091 |     8 | -rw-r--r-- | 1 | a | staff |    1049 | Jun | 22 | 10:25 | ./2017-06-22/enp-score-notation.pwgl                               |
+| 17229099 |     8 | -rw-r--r-- | 1 | a | staff |    1065 | Jun | 22 | 10:27 | ./2017-06-22/enp-script.pwgl                                       |
+| 17229062 |     8 | -rw-r--r-- | 1 | a | staff |     838 | Jun | 22 | 10:22 | ./2017-06-22/lisp-code-box.pwgl                                    |
+| 17229123 |     8 | -rw-r--r-- | 1 | a | staff |    1949 | Jun | 22 | 10:29 | ./2017-06-22/map-enum.pwgl                                         |
+| 17229093 |     8 | -rw-r--r-- | 1 | a | staff |    2093 | Jun | 22 | 10:26 | ./2017-06-22/multi-pmc.pwgl                                        |
+| 17229096 |     8 | -rw-r--r-- | 1 | a | staff |    2590 | Jun | 22 | 10:26 | ./2017-06-22/multi-score-pmc.pwgl                                  |
+| 17229119 |     8 | -rw-r--r-- | 1 | a | staff |    1042 | Jun | 22 | 10:28 | ./2017-06-22/sc-info.pwgl                                          |
+| 17229083 |     8 | -rw-r--r-- | 1 | a | staff |    2575 | Jun | 22 | 10:24 | ./2017-06-22/score-editor.pwgl                                     |
+| 17229116 |     8 | -rw-r--r-- | 1 | a | staff |     751 | Jun | 22 | 10:27 | ./2017-06-22/scs-card.pwgl                                         |
+| 17229065 |     8 | -rw-r--r-- | 1 | a | staff |     854 | Jun | 22 | 10:24 | ./2017-06-22/text-box.pwgl                                         |
+| 17311534 |    72 | -rw-r--r-- | 1 | a | staff |   34117 | Jun | 25 | 14:21 | ./2017-06-23/enumerate-beats-to-measures-to-voices.pwgl            |
+| 17309564 |    64 | -rw-r--r-- | 1 | a | staff |   29443 | Jun | 25 | 14:21 | ./2017-06-23/four-four-beats-and-three-eight-measures.pwgl         |
+| 17313499 |    64 | -rw-r--r-- | 1 | a | staff |   31547 | Jun | 25 | 14:21 | ./2017-06-24/iterate-your-own-beat-constructor.pwgl                |
+| 17324321 |    48 | -rw-r--r-- | 1 | a | staff |   23345 | Jun | 25 | 14:38 | ./2017-06-25/translate-three-pulses-code-to-rtm.pwgl               |
+| 17075499 |  1160 | -rw-r--r-- | 1 | a | staff |  593379 | Dec | 18 |  2013 | ./large/MUSC7911.pwgl                                              |
+| 17062710 |    16 | -rw-r--r-- | 1 | a | staff |    7719 | Jun |  8 | 19:31 | ./miscellaneous/2017-06-08/basic-pwgl-abstraction-as-lisp.pwgl     |
+| 17052675 |  1344 | -rw-r--r-- | 1 | a | staff |  685847 | Jun |  8 | 21:03 | ./miscellaneous/2017-06-08/blank.pwgl                              |
+| 17062724 |    16 | -rw-r--r-- | 1 | a | staff |    7842 | Jun |  8 | 19:31 | ./miscellaneous/2017-06-08/constructing-beats-and-measures2.pwgl   |
+| 17062704 |   120 | -rw-r--r-- | 1 | a | staff |   58243 | Jun |  8 | 20:38 | ./miscellaneous/2017-06-08/generating-basic-RTMs.pwgl              |
+| 17062835 |   104 | -rw-r--r-- | 1 | a | staff |   49687 | Jun |  8 | 20:16 | ./miscellaneous/2017-06-08/generating-basic-RTMs2.pwgl             |
+| 17067177 |     8 | -rw-r--r-- | 1 | a | staff |     278 | Jun |  9 | 16:12 | ./miscellaneous/2017-06-09/load-an-abstraction-maybe.pwgl          |
+| 17065037 |    64 | -rw-r--r-- | 1 | a | staff |   32608 | Jun |  9 | 14:18 | ./miscellaneous/2017-06-09/master-pc-sets-list.pwgl                |
+| 17063150 |   136 | -rw-r--r-- | 1 | a | staff |   68828 | Jun |  9 | 08:52 | ./miscellaneous/2017-06-09/reassigning-pitches-with-RTMs.pwgl      |
+| 17067527 |   472 | -rw-r--r-- | 1 | a | staff |  240798 | Jun |  9 | 19:33 | ./miscellaneous/2017-06-09/sc-info-code-in-blocks.pwgl             |
+| 17066472 |    96 | -rw-r--r-- | 1 | a | staff |   45443 | Jun | 10 | 06:15 | ./miscellaneous/2017-06-10/arpeggio-sets-experiment.pwgl           |
+| 17075733 |   248 | -rw-r--r-- | 1 | a | staff |  126205 | Jun | 10 | 14:23 | ./miscellaneous/2017-06-10/developing-variance.pwgl                |
+| 17071928 |   120 | -rw-r--r-- | 1 | a | staff |   57913 | Jun | 10 | 21:23 | ./miscellaneous/2017-06-10/filtering-sc-info.pwgl                  |
+| 17075463 |   184 | -rw-r--r-- | 1 | a | staff |   90673 | Jun | 10 | 21:23 | ./miscellaneous/2017-06-10/four-parts-as-chords.pwgl               |
+| 17071365 |    96 | -rw-r--r-- | 1 | a | staff |   47554 | Jun | 10 | 06:14 | ./miscellaneous/2017-06-10/generate-triadic-hexachords.pwgl        |
+| 17075731 |    56 | -rw-r--r-- | 1 | a | staff |   26891 | Jun | 10 | 14:22 | ./miscellaneous/2017-06-10/IFUNC-patching.pwgl                     |
+| 17075706 |   328 | -rw-r--r-- | 1 | a | staff |  166803 | Jun | 10 | 14:44 | ./miscellaneous/2017-06-10/PMC-tetrachords-7911.pwgl               |
+| 17071734 |    72 | -rw-r--r-- | 1 | a | staff |   34211 | Jun | 10 | 08:46 | ./miscellaneous/2017-06-10/score-harmony-scripting.pwgl            |
+| 17075711 |   128 | -rw-r--r-- | 1 | a | staff |   63689 | Jun | 10 | 14:23 | ./miscellaneous/2017-06-10/two-chord-phrase-7911.pwgl              |
+| 17075708 |   424 | -rw-r--r-- | 1 | a | staff |  215973 | Jun | 10 | 14:23 | ./miscellaneous/2017-06-10/voiced-hexachords-7911.pwgl             |
+| 17066086 |    40 | -rw-r--r-- | 1 | a | staff |   18211 | Jun | 25 | 14:38 | ./most-useful-abstractions/set-choice-abstraction.pwgl             |
+** find . -type f -name "*.org" -exec ls \{\} . \;
+#+BEGIN_SRC bash
+find . -type f -name "*.org" -exec ls \{\} . \;
+#+END_SRC
+
+#+RESULTS:
+|     ./2017-06-13/README.org |
+|                             |
+|                          .: |
+|                #readme.org# |
+|                  2017-06-13 |
+|                  2017-06-14 |
+|                  2017-06-15 |
+|                  2017-06-16 |
+|                  2017-06-18 |
+|                  2017-06-19 |
+|                  2017-06-20 |
+|                  2017-06-22 |
+|                  2017-06-23 |
+|                  2017-06-24 |
+|                  2017-06-25 |
+|                       large |
+|               miscellaneous |
+|    most-useful-abstractions |
+|          problem-code.lisp~ |
+|              problem2.lisp~ |
+|                pwgl-as-lisp |
+|                  readme.org |
+|                 readme.org~ |
+| ./2017-06-22/PWGL-boxes.org |
+|                             |
+|                          .: |
+|                #readme.org# |
+|                  2017-06-13 |
+|                  2017-06-14 |
+|                  2017-06-15 |
+|                  2017-06-16 |
+|                  2017-06-18 |
+|                  2017-06-19 |
+|                  2017-06-20 |
+|                  2017-06-22 |
+|                  2017-06-23 |
+|                  2017-06-24 |
+|                  2017-06-25 |
+|                       large |
+|               miscellaneous |
+|    most-useful-abstractions |
+|          problem-code.lisp~ |
+|              problem2.lisp~ |
+|                pwgl-as-lisp |
+|                  readme.org |
+|                 readme.org~ |
+|                ./readme.org |
+|                             |
+|                          .: |
+|                #readme.org# |
+|                  2017-06-13 |
+|                  2017-06-14 |
+|                  2017-06-15 |
+|                  2017-06-16 |
+|                  2017-06-18 |
+|                  2017-06-19 |
+|                  2017-06-20 |
+|                  2017-06-22 |
+|                  2017-06-23 |
+|                  2017-06-24 |
+|                  2017-06-25 |
+|                       large |
+|               miscellaneous |
+|    most-useful-abstractions |
+|          problem-code.lisp~ |
+|              problem2.lisp~ |
+|                pwgl-as-lisp |
+|                  readme.org |
+|                 readme.org~ |
+** find . -name "*.pwgl"
+#+BEGIN_SRC bash
+find . -name "*.pwgl"
+#+END_SRC
+* daily pwgl files
+** 
+*** ./2017-06-13/daily-pc-set-example.pwgl                             
+*** ./2017-06-13/trichord-pcset-slider.pwgl                            
+*** ./2017-06-13/use-code-boxes-for-pcs.pwgl
+** 
+*** ./2017-06-14/permute-all-tn-octaves-of-cardinality.pwgl
+** 
+*** ./2017-06-15/add-velocity-to-score-templates.pwgl
+*** ./2017-06-15/best-way-to-move-long-non-mensural.pwgl
+*** ./2017-06-15/document-this-ultimate-pcset-listener.pwgl
+*** ./2017-06-15/many-map-enums-with-score-editors.pwgl
+*** ./2017-06-15/map-chords-to-voices.pwgl
+*** ./2017-06-15/simpler-gentler-random-trichord-template.pwgl
+*** ./2017-06-15/ultimate-three-part-pc-harmonies.pwgl
+** 
+*** ./2017-06-16/choosing-equals-pcset-with-multiscore.pwgl
+*** ./2017-06-16/formatting-set-printouts.pwgl
+*** ./2017-06-16/manipulating-sc4-10-score.pwgl
+** 
+*** ./2017-06-18/collecting-all-multiscore-pmc-rules-in-a-measure.pwgl
+** 
+*** ./2017-06-19/formatting-and-writing-out-to-file.pwgl
+*** ./2017-06-19/no-adjacent-chord-dups-with-single-pcset.pwgl
+*** ./2017-06-19/openGL-text-macros.pwgl
+*** ./2017-06-19/simplified-by-set-pmc-searchspace.pwgl
+*** ./2017-06-19/understanding-BPFs-and-interpolation.pwgl
+** 
+*** ./2017-06-20/alea-and-breakpoint-functions.pwgl
+** 
+*** ./2017-06-22/abstraction-box.pwgl
+*** ./2017-06-22/chord-editor.pwgl
+*** ./2017-06-22/code-box.pwgl
+*** ./2017-06-22/empty-pwgl-patch.pwgl
+*** ./2017-06-22/enp-constructor.pwgl
+*** ./2017-06-22/enp-score-notation.pwgl
+*** ./2017-06-22/enp-script.pwgl
+*** ./2017-06-22/lisp-code-box.pwgl
+*** ./2017-06-22/map-enum.pwgl
+*** ./2017-06-22/multi-pmc.pwgl
+*** ./2017-06-22/multi-score-pmc.pwgl
+*** ./2017-06-22/sc-info.pwgl
+*** ./2017-06-22/score-editor.pwgl
+*** ./2017-06-22/scs-card.pwgl
+*** ./2017-06-22/text-box.pwgl
+** 
+*** ./2017-06-23/enumerate-beats-to-measures-to-voices.pwgl
+*** ./2017-06-23/four-four-beats-and-three-eight-measures.pwgl
+** 
+*** ./2017-06-24/iterate-your-own-beat-constructor.pwgl
+** 
+*** ./2017-06-25/translate-three-pulses-code-to-rtm.pwgl
+* MUSC7911
+** ./large/MUSC7911.pwgl
+* misc.
+** 
+*** ./miscellaneous/2017-06-08/basic-pwgl-abstraction-as-lisp.pwgl
+*** ./miscellaneous/2017-06-08/blank.pwgl
+*** ./miscellaneous/2017-06-08/constructing-beats-and-measures2.pwgl
+*** ./miscellaneous/2017-06-08/generating-basic-RTMs.pwgl
+*** ./miscellaneous/2017-06-08/generating-basic-RTMs2.pwgl
+** 
+*** ./miscellaneous/2017-06-09/load-an-abstraction-maybe.pwgl
+*** ./miscellaneous/2017-06-09/master-pc-sets-list.pwgl
+*** ./miscellaneous/2017-06-09/reassigning-pitches-with-RTMs.pwgl
+*** ./miscellaneous/2017-06-09/sc-info-code-in-blocks.pwgl
+** 
+*** ./miscellaneous/2017-06-10/arpeggio-sets-experiment.pwgl
+*** ./miscellaneous/2017-06-10/developing-variance.pwgl
+*** ./miscellaneous/2017-06-10/filtering-sc-info.pwgl
+*** ./miscellaneous/2017-06-10/four-parts-as-chords.pwgl
+*** ./miscellaneous/2017-06-10/generate-triadic-hexachords.pwgl
+*** ./miscellaneous/2017-06-10/IFUNC-patching.pwgl
+*** ./miscellaneous/2017-06-10/PMC-tetrachords-7911.pwgl
+*** ./miscellaneous/2017-06-10/score-harmony-scripting.pwgl
+*** ./miscellaneous/2017-06-10/two-chord-phrase-7911.pwgl
+*** ./miscellaneous/2017-06-10/voiced-hexachords-7911.pwgl
+** 
+*** ./most-useful-abstractions/set-choice-abstraction.pwgl
