@@ -7,3 +7,4 @@
 /problem4.lisp
 /.DS_Store
 /#readme.org#
+*.DS_Store
