@@ -1596,7 +1596,8 @@ git checkout -- file.ext
 #+END_SRC
 * local lisp tutorials
 [[file:~/Dropbox/AB-local/Moutain%20Lion%20backups/git-projects/all-tutorials/lisp/][file:~/Dropbox/AB-local/Moutain Lion backups/git-projects/all-tutorials/lisp/]]
-* printing out
+* file IO
+** printing out
 #+BEGIN_SRC lisp
 (defun dot->png (fname thunk)
   (with-open-file 
@@ -1606,7 +1607,7 @@ git checkout -- file.ext
 #+END_SRC
 
 #+BEGIN_SRC lisp
-(with-open-file (my-stream "testfile.txt"
+(with-open-file (my-stream "testfile.txt" ;;  ~/Github-repos/pwgl-chord-work/testfile.txt
 			   :direction :output
 			   :if-exists :supersede)
   (princ "Hello File!" my-stream))
@@ -1647,6 +1648,19 @@ git checkout -- file.ext
 |  9-1 | 9-2A | 9-2B | 9-3A  | 9-3B  | 9-4A | 9-4B | 9-5A | 9-5B |  9-6 | 9-7A | 9-7B | 9-8A | 9-8B   | 9-9    | 9-10   | 9-11A  | 9-11B  | 9-12   |       |       |        |        |       |       |       |        |        |       |        |        |        |       |       |       |       |       |       |        |        |        |        |        |       |       |       |       |       |       |       |       |       |       |       |       |       |       |        |        |       |       |        |        |        |        |        |        |       |        |        |        |        |       |        |        |        |        |       |       |       |
 | 10-1 | 10-2 | 10-3 | 10-4  | 10-5  | 10-6 |      |      |      |      |      |      |      |        |        |        |        |        |        |       |       |        |        |       |       |       |        |        |       |        |        |        |       |       |       |       |       |       |        |        |        |        |        |       |       |       |       |       |       |       |       |       |       |       |       |       |       |        |        |       |       |        |        |        |        |        |        |       |        |        |        |        |       |        |        |        |        |       |       |       |
 | 11-1 |      |      |       |       |      |      |      |      |      |      |      |      |        |        |        |        |        |        |       |       |        |        |       |       |       |        |        |       |        |        |        |       |       |       |       |       |       |        |        |        |        |        |       |       |       |       |       |       |       |       |       |       |       |       |       |       |        |        |       |       |        |        |        |        |        |        |       |        |        |        |        |       |        |        |        |        |       |       |       |
+** reading in
+From Land-of-lisp
+#+BEGIN_SRC lisp
+(with-open-file ( my-stream "data.txt" :direction :output) (print "my data" my-stream))
+(with-open-file (my-stream "data.txt" :direction :input) (read my-stream)) 
+"my data"
+#+END_SRC
+** for pwgl
+#+BEGIN_SRC lisp
+(with-open-file (my-stream "data2.txt" :direction :output :if-exists :supersede) (format my-stream "~a" '((0 1 2) (0 1 3))))
+
+(setq data-stream (with-open-file (my-stream "data2.txt" :direction :input) (read my-stream)))
+#+END_SRC
 * long list of pitch classes
 #+BEGIN_SRC lisp
 (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96)
@@ -1839,35 +1853,105 @@ find . -type f -name "*.org" -exec ls \{\} . \;
 find . -name "*.pwgl"
 #+END_SRC
 * daily pwgl files
-** 
+** 6-13
 *** ./2017-06-13/daily-pc-set-example.pwgl                             
-*** ./2017-06-13/trichord-pcset-slider.pwgl                            
+**** daily pc-set- example
+
+- "construct chords"  randomly selected from any set-class by
+cardinality
+- assign a random octave and transposition
+- decide on various non-mensural features (including arpeggiation?)
+  with various "construct-chords" functions assigning various values
+  to enumerating an arithmetic-series over the length of the chord
+  list
+**** picture
+
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.26.13%20PM.jpg]]
+*** ./2017-06-13/trichord-pcset-slider.pwgl
+**** trichord-pcset-slider
+
+- use clearly delineated horizontal slider to select a particular trichord
+- return both the set-class name and the pcs
+**** picture
+
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.27.32%20PM.jpg]]
 *** ./2017-06-13/use-code-boxes-for-pcs.pwgl
-** 
+**** use-code-boxes-for-pcs
+choose one set-type and variously transpose and displace a series of
+them into a chord editor
+**** picture
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.27.48%20PM.jpg]]
+** 6-14
 *** ./2017-06-14/permute-all-tn-octaves-of-cardinality.pwgl
-** 
+**** permute all tn octaves of cardinality
+- "construct-chords6" takes five arguments to create non-mensural score (arpeggiated) for any given set-type
+- will map-enumerate over the whole cardinality?
+- uses random permutations of lists (and pitches?)
+**** picture
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.28.24%20PM.jpg]]
+
+** 6-15
 *** ./2017-06-15/add-velocity-to-score-templates.pwgl
+**** add-velocity-to-score-templates
+use velocity arguments with an existing midi list
+**** picture
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.28.45%20PM.jpg]]
+**** 
 *** ./2017-06-15/best-way-to-move-long-non-mensural.pwgl
+**** best-way-to-move-long-non-mensural
+view a score-editor play (with set analysis scripting)
+**** picture
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%207.59.22%20PM.jpg]]
 *** ./2017-06-15/document-this-ultimate-pcset-listener.pwgl
+**** document this ultimate pcset listener
+construct-chords7 with a "construct-score-template" patch
+**** picture
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.00.18%20PM.jpg]]
 *** ./2017-06-15/many-map-enums-with-score-editors.pwgl
 *** ./2017-06-15/map-chords-to-voices.pwgl
+**** map chords to voices
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.00.47%20PM.jpg]]
 *** ./2017-06-15/simpler-gentler-random-trichord-template.pwgl
+**** simpler gentler random trichord template
+construct chords7 with a given midi list and a construct-my-score-template
+**** picture
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.01.17%20PM.jpg]]
 *** ./2017-06-15/ultimate-three-part-pc-harmonies.pwgl
-** 
+ultimate three part pc harmonies
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.03.15%20PM.jpg]]
+** 6-16
 *** ./2017-06-16/choosing-equals-pcset-with-multiscore.pwgl
+choosing equals pcsert with multiscore
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.03.39%20PM.jpg]]
 *** ./2017-06-16/formatting-set-printouts.pwgl
+formatting set printouts
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.04.17%20PM.jpg]]
 *** ./2017-06-16/manipulating-sc4-10-score.pwgl
-** 
+manipulating sc4-10 score
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.04.51%20PM.jpg]]
+** 6-18
 *** ./2017-06-18/collecting-all-multiscore-pmc-rules-in-a-measure.pwgl
-** 
+collecting all multiscore pmc rules in a measure
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.05.16%20PM.jpg]]
+** 6-19
 *** ./2017-06-19/formatting-and-writing-out-to-file.pwgl
+formatting and writing out to file
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.06.26%20PM.jpg]]
 *** ./2017-06-19/no-adjacent-chord-dups-with-single-pcset.pwgl
 *** ./2017-06-19/openGL-text-macros.pwgl
+openGL text macros
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.07.06%20PM.jpg]]
 *** ./2017-06-19/simplified-by-set-pmc-searchspace.pwgl
+simplified by set pmc searchspace
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.07.24%20PM.jpg]]
 *** ./2017-06-19/understanding-BPFs-and-interpolation.pwgl
-** 
+understanding bpfs and interpolation
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.07.38%20PM.jpg]]
+** 6-20
 *** ./2017-06-20/alea-and-breakpoint-functions.pwgl
-** 
+alea and breakpoint functions
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.08.18%20PM.jpg]]
+** 6-22
 *** ./2017-06-22/abstraction-box.pwgl
 *** ./2017-06-22/chord-editor.pwgl
 *** ./2017-06-22/code-box.pwgl
@@ -1883,13 +1967,48 @@ find . -name "*.pwgl"
 *** ./2017-06-22/score-editor.pwgl
 *** ./2017-06-22/scs-card.pwgl
 *** ./2017-06-22/text-box.pwgl
-** 
+** 6-23
 *** ./2017-06-23/enumerate-beats-to-measures-to-voices.pwgl
+enumerate beats to measure to voices
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.09.10%20PM.jpg]]
 *** ./2017-06-23/four-four-beats-and-three-eight-measures.pwgl
-** 
+** 6-24
+4/4 beats and 3/8 measures
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.10.00%20PM.jpg]]
 *** ./2017-06-24/iterate-your-own-beat-constructor.pwgl
-** 
+iterate your own beat constructor
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.11.01%20PM.jpg]]
+** 6-25
 *** ./2017-06-25/translate-three-pulses-code-to-rtm.pwgl
+*** ./2017-06-25/one-four-and-two-four-measure-databases.pwgl
+[[file:~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%204.25.50%20PM.png][~/Pictures/screenshots/wp-templates/Screen Shot 2017-06-26 at 4.25.50 PM.png]]
+*** ./2017-06-25/three-four-measures.pwgl
+*** ./2017-06-25/extract-nth-object-from-score.pwgl
+extract nth object from score
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.11.22%20PM.jpg]]
+*** ./2017-06-25/slider-for-987-four-four-measures.pwgl
+1/4 and 2/4 measure databases
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.11.44%20PM.jpg]]
+
+
+** 6-26
+*** ./2017-06-26/complete-three-four-measures-27000.pwgl
+complete 3/4 measures 27000
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.16.26%20PM.jpg]]
+
+
+
+*** slider for 987 4/4 measures
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.12.58%20PM.jpg]]
+
+*** 3/4 measures
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.13.58%20PM.jpg]]
+** ./2017-06-26/produce-but-dont-save-27000.pwgl
+*** produce but don't save 27000 measures
+
+[[~/Pictures/screenshots/wp-templates/Screen Shot 2017-06-26 at 8.17.48 PM.jpg]]
+** translate three pulses code to rtm
+[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.14.45%20PM.jpg]]
 * MUSC7911
 ** ./large/MUSC7911.pwgl
 * misc.
@@ -1917,3 +2036,4 @@ find . -name "*.pwgl"
 *** ./miscellaneous/2017-06-10/voiced-hexachords-7911.pwgl
 ** 
 *** ./most-useful-abstractions/set-choice-abstraction.pwgl
+
