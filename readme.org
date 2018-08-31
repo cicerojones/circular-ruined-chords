@@ -1896,13 +1896,16 @@ them into a chord editor
 **** add-velocity-to-score-templates
 use velocity arguments with an existing midi list
 **** picture
-[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.28.45%20PM.jpg]]
+
+[[file:PWGL-chordwork-readme_files/Screen%2520Shot%25202017-06-26%2520at%25205.jpg][file:~/repos/circular-ruined-chords/PWGL-chordwork-readme_files/Screen%20Shot%202017-06-26%20at%205.jpg]]
 **** 
 *** ./2017-06-15/best-way-to-move-long-non-mensural.pwgl
 **** best-way-to-move-long-non-mensural
 view a score-editor play (with set analysis scripting)
 **** picture
-[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%207.59.22%20PM.jpg]]
+[[file:PWGL-chordwork-readme_files/Screen%2520Shot%25202017-06-26%2520at%25207.jpg][
+file:~/repos/circular-ruined-chords/PWGL-chordwork-readme_files/Screen%20Shot%202017-06-26%20at%207.jpg]]
+
 *** ./2017-06-15/document-this-ultimate-pcset-listener.pwgl
 **** document this ultimate pcset listener
 construct-chords7 with a "construct-score-template" patch
@@ -1917,6 +1920,8 @@ construct-chords7 with a "construct-score-template" patch
 construct chords7 with a given midi list and a construct-my-score-template
 **** picture
 [[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.01.17%20PM.jpg]]
+
+[[file:PWGL-chordwork-readme_files/Screen%252520Shot%2525202017-06-26%252520at%2525205_002.jpg][file:~/repos/circular-ruined-chords/PWGL-chordwork-readme_files/Screen%2520Shot%25202017-06-26%2520at%25205_002.jpg]]
 *** ./2017-06-15/ultimate-three-part-pc-harmonies.pwgl
 ultimate three part pc harmonies
 [[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.03.15%20PM.jpg]]
@@ -1986,7 +1991,8 @@ iterate your own beat constructor
 *** ./2017-06-25/three-four-measures.pwgl
 *** ./2017-06-25/extract-nth-object-from-score.pwgl
 extract nth object from score
-[[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.11.22%20PM.jpg]]
+
+[[file:PWGL-chordwork-readme_files/Screen%2520Shot%25202017-06-26%2520at%25208.jpg][file:~/repos/circular-ruined-chords/PWGL-chordwork-readme_files/Screen%20Shot%202017-06-26%20at%208.jpg]]
 *** ./2017-06-25/slider-for-987-four-four-measures.pwgl
 1/4 and 2/4 measure databases
 [[~/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.11.44%20PM.jpg]]
@@ -2038,3 +2044,142 @@ complete 3/4 measures 27000
 ** 
 *** ./most-useful-abstractions/set-choice-abstraction.pwgl
 
+* tree
+#+begin_src sh
+tree .
+#+end_src
+
+#+RESULTS:
+| 0   |                             |                                                       |                                       |
+| ├── | 2017-06-13                  |                                                       |                                       |
+| │   | ├──                         | README.org                                            |                                       |
+| │   | ├──                         | daily-pc-set-example.pwgl                             |                                       |
+| │   | ├──                         | trichord-pcset-slider.pwgl                            |                                       |
+| │   | └──                         | use-code-boxes-for-pcs.pwgl                           |                                       |
+| ├── | 2017-06-14                  |                                                       |                                       |
+| │   | └──                         | permute-all-tn-octaves-of-cardinality.pwgl            |                                       |
+| ├── | 2017-06-15                  |                                                       |                                       |
+| │   | ├──                         | add-velocity-to-score-templates.pwgl                  |                                       |
+| │   | ├──                         | best-way-to-move-long-non-mensural.pwgl               |                                       |
+| │   | ├──                         | document-this-ultimate-pcset-listener.pwgl            |                                       |
+| │   | ├──                         | many-map-enums-with-score-editors.pwgl                |                                       |
+| │   | ├──                         | map-chords-to-voices.pwgl                             |                                       |
+| │   | ├──                         | simpler-gentler-random-trichord-template.pwgl         |                                       |
+| │   | └──                         | ultimate-three-part-pc-harmonies.pwgl                 |                                       |
+| ├── | 2017-06-16                  |                                                       |                                       |
+| │   | ├──                         | choosing-equals-pcset-with-multiscore.pwgl            |                                       |
+| │   | ├──                         | formatting-set-printouts.pwgl                         |                                       |
+| │   | └──                         | manipulating-sc4-10-score.pwgl                        |                                       |
+| ├── | 2017-06-18                  |                                                       |                                       |
+| │   | └──                         | collecting-all-multiscore-pmc-rules-in-a-measure.pwgl |                                       |
+| ├── | 2017-06-19                  |                                                       |                                       |
+| │   | ├──                         | formatting-and-writing-out-to-file.pwgl               |                                       |
+| │   | ├──                         | no-adjacent-chord-dups-with-single-pcset.pwgl         |                                       |
+| │   | ├──                         | openGL-text-macros.pwgl                               |                                       |
+| │   | ├──                         | simplified-by-set-pmc-searchspace.pwgl                |                                       |
+| │   | └──                         | understanding-BPFs-and-interpolation.pwgl             |                                       |
+| ├── | 2017-06-20                  |                                                       |                                       |
+| │   | └──                         | alea-and-breakpoint-functions.pwgl                    |                                       |
+| ├── | 2017-06-22                  |                                                       |                                       |
+| │   | ├──                         | PWGL-boxes.org                                        |                                       |
+| │   | ├──                         | abstraction-box.pwgl                                  |                                       |
+| │   | ├──                         | chord-editor.pwgl                                     |                                       |
+| │   | ├──                         | code-box.pwgl                                         |                                       |
+| │   | ├──                         | empty-pwgl-patch.pwgl                                 |                                       |
+| │   | ├──                         | enp-constructor.pwgl                                  |                                       |
+| │   | ├──                         | enp-score-notation.pwgl                               |                                       |
+| │   | ├──                         | enp-script.pwgl                                       |                                       |
+| │   | ├──                         | lisp-code-box.pwgl                                    |                                       |
+| │   | ├──                         | map-enum.pwgl                                         |                                       |
+| │   | ├──                         | multi-pmc.pwgl                                        |                                       |
+| │   | ├──                         | multi-score-pmc.pwgl                                  |                                       |
+| │   | ├──                         | sc-info.pwgl                                          |                                       |
+| │   | ├──                         | score-editor.pwgl                                     |                                       |
+| │   | ├──                         | scs-card.pwgl                                         |                                       |
+| │   | └──                         | text-box.pwgl                                         |                                       |
+| ├── | 2017-06-23                  |                                                       |                                       |
+| │   | ├──                         | enumerate-beats-to-measures-to-voices.pwgl            |                                       |
+| │   | └──                         | four-four-beats-and-three-eight-measures.pwgl         |                                       |
+| ├── | 2017-06-24                  |                                                       |                                       |
+| │   | └──                         | iterate-your-own-beat-constructor.pwgl                |                                       |
+| ├── | 2017-06-25                  |                                                       |                                       |
+| │   | ├──                         | extract-nth-object-from-score.pwgl                    |                                       |
+| │   | ├──                         | one-four-and-two-four-measure-databases.pwgl          |                                       |
+| │   | ├──                         | slider-for-987-four-four-measures.pwgl                |                                       |
+| │   | ├──                         | three-four-measures.pwgl                              |                                       |
+| │   | └──                         | translate-three-pulses-code-to-rtm.pwgl               |                                       |
+| ├── | 2017-06-26                  |                                                       |                                       |
+| │   | ├──                         | complete-three-four-measures-27000.pwgl               |                                       |
+| │   | └──                         | produce-but-dont-save-27000.pwgl                      |                                       |
+| ├── | PWGL-chordwork-readme_files |                                                       |                                       |
+| │   | ├──                         | PWGL-chordwork-readme.html                            |                                       |
+| │   | ├──                         | Screen%20Shot%202017-06-26%20at%205.jpg               |                                       |
+| │   | ├──                         | Screen%20Shot%202017-06-26%20at%207.jpg               |                                       |
+| │   | ├──                         | Screen%20Shot%202017-06-26%20at%208.jpg               |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25205_002.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25205_003.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25205_004.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25205_005.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_002.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_003.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_004.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_005.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_006.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_007.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_008.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_009.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_010.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_011.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_012.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_013.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_014.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_015.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_016.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_017.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_018.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_019.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_020.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_021.jpg   |                                       |
+| │   | ├──                         | Screen%2520Shot%25202017-06-26%2520at%25208_022.jpg   |                                       |
+| │   | └──                         | Screen%2520Shot%25202017-06-26%2520at%25208_023.jpg   |                                       |
+| ├── | data.txt                    |                                                       |                                       |
+| ├── | data2.txt                   |                                                       |                                       |
+| ├── | large                       |                                                       |                                       |
+| │   | └──                         | MUSC7911.pwgl                                         |                                       |
+| ├── | miscellaneous               |                                                       |                                       |
+| │   | ├──                         | 2017-06-08                                            |                                       |
+| │   | │                           | ├──                                                   | basic-pwgl-abstraction-as-lisp.pwgl   |
+| │   | │                           | ├──                                                   | blank.pwgl                            |
+| │   | │                           | ├──                                                   | constructing-beats-and-measures2.pwgl |
+| │   | │                           | ├──                                                   | generating-basic-RTMs.pwgl            |
+| │   | │                           | └──                                                   | generating-basic-RTMs2.pwgl           |
+| │   | ├──                         | 2017-06-09                                            |                                       |
+| │   | │                           | ├──                                                   | load-an-abstraction-maybe.pwgl        |
+| │   | │                           | ├──                                                   | master-pc-sets-list.pwgl              |
+| │   | │                           | ├──                                                   | reassigning-pitches-with-RTMs.pwgl    |
+| │   | │                           | └──                                                   | sc-info-code-in-blocks.pwgl           |
+| │   | ├──                         | 2017-06-10                                            |                                       |
+| │   | │                           | ├──                                                   | IFUNC-patching.pwgl                   |
+| │   | │                           | ├──                                                   | PMC-tetrachords-7911.pwgl             |
+| │   | │                           | ├──                                                   | arpeggio-sets-experiment.pwgl         |
+| │   | │                           | ├──                                                   | developing-variance.pwgl              |
+| │   | │                           | ├──                                                   | filtering-sc-info.pwgl                |
+| │   | │                           | ├──                                                   | four-parts-as-chords.pwgl             |
+| │   | │                           | ├──                                                   | generate-triadic-hexachords.pwgl      |
+| │   | │                           | ├──                                                   | score-harmony-scripting.pwgl          |
+| │   | │                           | ├──                                                   | two-chord-phrase-7911.pwgl            |
+| │   | │                           | └──                                                   | voiced-hexachords-7911.pwgl           |
+| │   | ├──                         | developing-chords.pwgl                                |                                       |
+| │   | └──                         | some-recent-chord-editors.pwgl                        |                                       |
+| ├── | most-useful-abstractions    |                                                       |                                       |
+| │   | └──                         | set-choice-abstraction.pwgl                           |                                       |
+| ├── | pwgl-as-lisp                |                                                       |                                       |
+| │   | ├──                         | problem-code.lisp                                     |                                       |
+| │   | ├──                         | problem2.lisp                                         |                                       |
+| │   | ├──                         | problem3.lisp                                         |                                       |
+| │   | └──                         | problem4.lisp                                         |                                       |
+| ├── | readme.html                 |                                                       |                                       |
+| ├── | readme.org                  |                                                       |                                       |
+| └── | three-four-measures         |                                                       |                                       |
+|     |                             |                                                       |                                       |
+| 20  | directories,                | 110                                                   | files                                 |
