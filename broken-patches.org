@@ -1,0 +1,89 @@
+#+begin_src shell
+tree .
+#+end_src
+
+#+RESULTS:
+|                                                       |   | opens? |                       |            |
+|                                                       |   |        |                       | 2017-06-13 |
+| README.org                                            |   |        |                       | ├──        |
+| daily-pc-set-example.pwgl                             |   |      1 |                       | ├──        |
+| trichord-pcset-slider.pwgl                            |   |      1 |                       | ├──        |
+| use-code-boxes-for-pcs.pwgl                           |   |      1 |                       | └──        |
+|                                                       |   |        |                       | 2017-06-14 |
+| permute-all-tn-octaves-of-cardinality.pwgl            |   |      1 |                       | └──        |
+|                                                       |   |        |                       | 2017-06-15 |
+| add-velocity-to-score-templates.pwgl                  |   |      1 |                       | ├──        |
+| best-way-to-move-long-non-mensural.pwgl               |   |      1 |                       | ├──        |
+| document-this-ultimate-pcset-listener.pwgl            |   |      1 |                       | ├──        |
+| many-map-enums-with-score-editors.pwgl                |   |      0 | something posts to IO | ├──        |
+| map-chords-to-voices.pwgl                             |   |      1 |                       | ├──        |
+| simpler-gentler-random-trichord-template.pwgl         |   |      1 |                       | ├──        |
+| ultimate-three-part-pc-harmonies.pwgl                 |   |      1 |                       | └──        |
+|                                                       |   |        |                       | 2017-06-16 |
+| choosing-equals-pcset-with-multiscore.pwgl            |   |      1 |                       | ├──        |
+| formatting-set-printouts.pwgl                         |   |      1 |                       | ├──        |
+| manipulating-sc4-10-score.pwgl                        |   |      1 | slow to open          | └──        |
+|                                                       |   |        |                       | 2017-06-18 |
+| collecting-all-multiscore-pmc-rules-in-a-measure.pwgl |   |        |                       | └──        |
+|                                                       |   |        |                       | 2017-06-19 |
+| formatting-and-writing-out-to-file.pwgl               |   |      1 |                       | ├──        |
+| no-adjacent-chord-dups-with-single-pcset.pwgl         |   |      0 |                       | ├──        |
+| openGL-text-macros.pwgl                               |   |      1 |                       | ├──        |
+| simplified-by-set-pmc-searchspace.pwgl                |   |      1 |                       | ├──        |
+| understanding-BPFs-and-interpolation.pwgl             |   |      1 |                       | └──        |
+|                                                       |   |        |                       | 2017-06-20 |
+| alea-and-breakpoint-functions.pwgl                    |   |        |                       | └──        |
+
+#+COMMENT:
+|                                               |                                       |   |                 | 2017-06-23               |
+| enumerate-beats-to-measures-to-voices.pwgl    |                                       |   |                 | ├──                      |
+| four-four-beats-and-three-eight-measures.pwgl |                                       |   |                 | └──                      |
+|                                               |                                       |   |                 | 2017-06-24               |
+| iterate-your-own-beat-constructor.pwgl        |                                       |   |                 | └──                      |
+|                                               |                                       |   |                 | 2017-06-25               |
+| extract-nth-object-from-score.pwgl            |                                       |   |                 | ├──                      |
+| one-four-and-two-four-measure-databases.pwgl  |                                       |   |                 | ├──                      |
+| slider-for-987-four-four-measures.pwgl        |                                       |   | too slow        | ├──                      |
+| three-four-measures.pwgl                      |                                       |   | very slow       | ├──                      |
+| translate-three-pulses-code-to-rtm.pwgl       |                                       | 1 |                 | └──                      |
+|                                               |                                       |   |                 | 2017-06-26               |
+| complete-three-four-measures-27000.pwgl       |                                       | 0 |                 | ├──                      |
+| produce-but-dont-save-27000.pwgl              |                                       | 0 |                 | └──                      |
+| MUSC7911.pwgl                                 |                                       | 1 |                 | └──                      |
+|                                               |                                       |   |                 | miscellaneous            |
+| 2017-06-08                                    |                                       |   |                 | ├──                      |
+| ├──                                           | basic-pwgl-abstraction-as-lisp.pwgl   | 0 | weird           | │                        |
+| ├──                                           | blank.pwgl                            | 1 | NOTBLANK        | │                        |
+| ├──                                           | constructing-beats-and-measures2.pwgl | 0 | loads some code | │                        |
+| ├──                                           | generating-basic-RTMs.pwgl            | 1 |                 | │                        |
+| └──                                           | generating-basic-RTMs2.pwgl           | 1 |                 | │                        |
+| 2017-06-09                                    |                                       |   |                 | ├──                      |
+| ├──                                           | load-an-abstraction-maybe.pwgl        | 1 | empty tho       | │                        |
+| ├──                                           | master-pc-sets-list.pwgl              | 1 |                 | │                        |
+| ├──                                           | reassigning-pitches-with-RTMs.pwgl    | 1 |                 | │                        |
+| └──                                           | sc-info-code-in-blocks.pwgl           | 0 |                 | │                        |
+| 2017-06-10                                    |                                       |   |                 | ├──                      |
+| ├──                                           | IFUNC-patching.pwgl                   | 1 |                 | │                        |
+| ├──                                           | PMC-tetrachords-7911.pwgl             | 1 |                 | │                        |
+| ├──                                           | arpeggio-sets-experiment.pwgl         | 1 |                 | │                        |
+| ├──                                           | developing-variance.pwgl              | 1 |                 | │                        |
+| ├──                                           | filtering-sc-info.pwgl                | 1 |                 | │                        |
+| ├──                                           | four-parts-as-chords.pwgl             | 1 |                 | │                        |
+| ├──                                           | generate-triadic-hexachords.pwgl      | 1 |                 | │                        |
+| ├──                                           | score-harmony-scripting.pwgl          | 1 |                 | │                        |
+| ├──                                           | two-chord-phrase-7911.pwgl            | 1 |                 | │                        |
+| └──                                           | voiced-hexachords-7911.pwgl           | 1 |                 | │                        |
+| developing-chords.pwgl                        |                                       | 0 |                 | ├──                      |
+| some-recent-chord-editors.pwgl                |                                       | 0 |                 | └──                      |
+|                                               |                                       |   |                 | most-useful-abstractions |
+| set-choice-abstraction.pwgl                   |                                       | 1 |                 | └──                      |
+|                                               |                                       |   |                 | pwgl-as-lisp             |
+| problem-code.lisp                             |                                       |   |                 | ├──                      |
+| problem2.lisp                                 |                                       |   |                 | ├──                      |
+| problem3.lisp                                 |                                       |   |                 | ├──                      |
+| problem4.lisp                                 |                                       |   |                 | └──                      |
+|                                               |                                       |   |                 | readme.html              |
+|                                               |                                       |   |                 | readme.org               |
+|                                               |                                       |   |                 | three-four-measures      |
+|                                               |                                       |   |                 |                          |
+| 111                                           | files                                 |   |                 | directories,             |
