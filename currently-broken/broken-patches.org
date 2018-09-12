@@ -1,3 +1,20 @@
+
+* study your error messages
+#+begin_src lisp
+   ; "(* ?1 :chord (?if 
+;               (when (m ?1 :complete? t)
+;                 (let* ((notes (sort (copy-list (notes ?1))  '< :key 'midi))
+;                        (dur 4)
+;                        (times (interpolation 0 (* 0.9 dur) (length notes) 1)))
+;                   (dolist (n notes)
+;                     (setf (offset-time n) (pop times))
+;                     (setf (dur n) (- dur (offset-time n)))))))
+;    \"arpeggio\")
+
+
+; "
+#+end_src
+* tree building
 #+begin_src shell
 tree .
 #+end_src
