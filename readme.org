@@ -1,6 +1,6 @@
 * COMMENT Hello chords!
-* steps
-** to iterate
+* steps                                                          :commonlisp:
+** to iterate                                                          :iter:
 *** load library
 perchance to dream
 https://common-lisp.net/project/iterate/doc/index.html#Top
@@ -64,29 +64,42 @@ In the REPL buffer in SLIME you can also change packages with a REPL shortcut. T
  (finally (return (mk-bpf xs ys))))
 #+END_SRC
 ** many pc-octaves
+#+END_SRC
+
 #+BEGIN_SRC lisp
 (let ((pc-sets '((0 1 3) (0 4 8))))
   (iterate:iter 
     (iterate:for pc-set in pc-sets)
     (iterate:collect (reverse pc-set))))
+#+END_SRC
 
+#+RESULTS:
+| 3 | 1 | 0 |
+| 8 | 4 | 0 |
+
+#+BEGIN_SRC lisp
 (let ((pc-sets '((0 1 3) (0 4 8))))
   (iterate:iter 
     (iterate:for pc-set in pc-sets)
     (iterate:collect
 	(iterate:iter (iterate:for pc in pc-set)
 		      (iterate:collect (+ 12 pc))))))
+#+END_SRC
 
-
+#+BEGIN_SRC lisp
 (iterate:iter 
 	   (iterate:for i in '(0 1 3 4))
 	   (iterate:collect (mapcar #'(lambda (x) (+ x i)) '(36 48 60))))
+#+END_SRC
 
+#+BEGIN_SRC lisp
 (let ((pc-set '(0 1 3)))
   (iterate:iter 
     (iterate:for i in pc-set)
     (iterate:collect (mapcar #'(lambda (x) (+ x i)) '(36 48 60)))))
+#+END_SRC
 
+#+BEGIN_SRC lisp
 (let ((pc-sets '((0 1 3) (0 1 4))))
   (iterate:iter 
     (iterate:for pc-set in pc-sets)
@@ -94,15 +107,18 @@ In the REPL buffer in SLIME you can also change packages with a REPL shortcut. T
 	(iterate:iter 
 	  (iterate:for i in pc-set)
 	  (iterate:collect (mapcar #'(lambda (x) (+ x i)) '(36 48 60)))))))
+#+END_SRC
 
-
+#+BEGIN_SRC lisp
 (iterate:iter 
   (iterate:for pc-set in pc-sets)
   (iterate:collect
       (iterate:iter 
 	(iterate:for i in pc-set)
 	(iterate:collect (mapcar #'(lambda (x) (+ x i)) oct-list)))))
+#+END_SRC
 
+#+BEGIN_SRC lisp
 (let ((pc-sets '((0 1 4))))
   (iterate:iter 
     (iterate:for pc-set in pc-sets)
@@ -2183,3 +2199,23 @@ tree .
 | └── | three-four-measures         |                                                       |                                       |
 |     |                             |                                                       |                                       |
 | 20  | directories,                | 110                                                   | files                                 |
+
+* Loading Libraries to Get to Tutorials
+What are libraries in PWGL?
+
+Yikes. Since it might help to have an idea of what you /do/ with libaries, first, let's start by saying that you can "load" and "autoload" libraries.
+
+Cmd+U and load a bunch of libraries (that aren't loaded by default??). Some available ones are:
+
+But really, you might just want to Autoload a bunch (which makes them all available and loaded by default each time you start PWGL).
+
+
+
+
+
+[[file:/Applications/PWGL/pwgl-library/esquisse/][file:/Applications/PWGL/pwgl-library/esquisse/]]
+[[file:/Applications/PWGL/pwgl-library/grhythm/][file:/Applications/PWGL/pwgl-library/grhythm/]]
+[[file:/Applications/PWGL/pwgl-library/mylib/][file:/Applications/PWGL/pwgl-library/mylib/]]
+
+And in a typical installation this holds other sublibraries (that aren't loaded by default?):
+[[file:~/PWGL-User/User-library/][file:~/PWGL-User/User-library/]]
