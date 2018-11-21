@@ -1,0 +1,55 @@
+; -*- mode: Lisp;-*-
+:title "This Is A Title value"
+:subtitle "This Is A Subtitle value"
+
+:section-start "This Is a Section-Start value"
+:bodytext "This Is A Bodytext value"
+:section-end
+
+:section-start "A Section-Start for an Important Value"
+:bodytext "Where do important values go? In a Section?"
+:important "This Is An Important value"
+:section-end
+
+:section-start "A Section-Start for a Code value"
+:bodytext "Here comes the Code value"
+:code "#.(format () "~a" (ccl::pwgl-human-readable-version-string :long))"
+:section-end
+
+
+:section-start "Gonna make subsections with this Section-Start values"
+
+:section-start "A Section-Start for some Inline-Item values"
+:body-text "But you don't get indenting!"
+:inline-items
+- "7911-derived"
+- "BPFs-and-visuals"
+- "abstractions"
+:bodytext "So you don't like newlines?"
+"Why not start a new line (with a new string) and see below?"
+:section-end
+
+:section-start "A Section-Start for some Inline-Item values"
+:items
+- "7911-derived"
+- "BPFs-and-visuals"
+- "abstractions"
+- "beats-and-measures"
+- "box-utilities"
+- "microtonality"
+- "pcset-centric"
+- "resources-img"
+- "resources-txt"
+- "too-large"
+- "transcriptions"
+- "trash-broken"
+- "uncategorized"
+:section-end
+:section-end
+
+:section-start "A Section-Start for a Figure value"
+:bodytext "Text for the Figure"
+"Let's bury this section at the bottom, because the dimensions of the .jpg are a touch too big"
+:figure "resources-img/add-velocity.jpg"
+:caption "A Caption Value"
+:section-end
