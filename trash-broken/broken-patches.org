@@ -1,4 +1,7 @@
 
+* the version saved with??
+version 1.0 beta RC 19 (build 342)
+;; this patch was saved with PWGL version 1.0 beta RC 18 (0.9.18-201)
 * study your error messages
 #+begin_src lisp
    ; "(* ?1 :chord (?if 
