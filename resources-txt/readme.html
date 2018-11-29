@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-07-06 Thu 13:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="a" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3228ad1">1. daily pwgl files</a>
+<ul>
+<li><a href="#orgaf4c20c">1.1. 6-13</a>
+<ul>
+<li><a href="#org2534b13">1.1.1. ./2017-06-13/daily-pc-set-example.pwgl</a></li>
+<li><a href="#orgf192e23">1.1.2. ./2017-06-13/trichord-pcset-slider.pwgl</a></li>
+<li><a href="#org67225bc">1.1.3. ./2017-06-13/use-code-boxes-for-pcs.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org3a96a09">1.2. 6-14</a>
+<ul>
+<li><a href="#orgf333f54">1.2.1. ./2017-06-14/permute-all-tn-octaves-of-cardinality.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org0116566">1.3. 6-15</a>
+<ul>
+<li><a href="#org8025d87">1.3.1. ./2017-06-15/add-velocity-to-score-templates.pwgl</a></li>
+<li><a href="#orgee6ccaf">1.3.2. ./2017-06-15/best-way-to-move-long-non-mensural.pwgl</a></li>
+<li><a href="#org0201214">1.3.3. ./2017-06-15/document-this-ultimate-pcset-listener.pwgl</a></li>
+<li><a href="#org9fbf92c">1.3.4. ./2017-06-15/many-map-enums-with-score-editors.pwgl</a></li>
+<li><a href="#orgaf7e9d7">1.3.5. ./2017-06-15/map-chords-to-voices.pwgl</a></li>
+<li><a href="#org13ca86d">1.3.6. ./2017-06-15/simpler-gentler-random-trichord-template.pwgl</a></li>
+<li><a href="#orge1f65f5">1.3.7. ./2017-06-15/ultimate-three-part-pc-harmonies.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org1d22734">1.4. 6-16</a>
+<ul>
+<li><a href="#orgd577b58">1.4.1. ./2017-06-16/choosing-equals-pcset-with-multiscore.pwgl</a></li>
+<li><a href="#orgf65688d">1.4.2. ./2017-06-16/formatting-set-printouts.pwgl</a></li>
+<li><a href="#orgbcb62ef">1.4.3. ./2017-06-16/manipulating-sc4-10-score.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org08f9aa7">1.5. 6-18</a>
+<ul>
+<li><a href="#org49fd71a">1.5.1. ./2017-06-18/collecting-all-multiscore-pmc-rules-in-a-measure.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org0bcce6a">1.6. 6-19</a>
+<ul>
+<li><a href="#orge62357b">1.6.1. ./2017-06-19/formatting-and-writing-out-to-file.pwgl</a></li>
+<li><a href="#org9bc9e69">1.6.2. ./2017-06-19/no-adjacent-chord-dups-with-single-pcset.pwgl</a></li>
+<li><a href="#org9fbab89">1.6.3. ./2017-06-19/openGL-text-macros.pwgl</a></li>
+<li><a href="#org812a4b7">1.6.4. ./2017-06-19/simplified-by-set-pmc-searchspace.pwgl</a></li>
+<li><a href="#orgd1271d3">1.6.5. ./2017-06-19/understanding-BPFs-and-interpolation.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org9e9eeef">1.7. 6-20</a>
+<ul>
+<li><a href="#orga9fee9c">1.7.1. ./2017-06-20/alea-and-breakpoint-functions.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#orga6396ae">1.8. 6-22</a>
+<ul>
+<li><a href="#org0d768bb">1.8.1. ./2017-06-22/abstraction-box.pwgl</a></li>
+<li><a href="#orgf36f194">1.8.2. ./2017-06-22/chord-editor.pwgl</a></li>
+<li><a href="#org08abb33">1.8.3. ./2017-06-22/code-box.pwgl</a></li>
+<li><a href="#orgb699106">1.8.4. ./2017-06-22/empty-pwgl-patch.pwgl</a></li>
+<li><a href="#org28db972">1.8.5. ./2017-06-22/enp-constructor.pwgl</a></li>
+<li><a href="#org8212ab5">1.8.6. ./2017-06-22/enp-score-notation.pwgl</a></li>
+<li><a href="#org52b1017">1.8.7. ./2017-06-22/enp-script.pwgl</a></li>
+<li><a href="#orgdc5ff95">1.8.8. ./2017-06-22/lisp-code-box.pwgl</a></li>
+<li><a href="#org96c0b85">1.8.9. ./2017-06-22/map-enum.pwgl</a></li>
+<li><a href="#org01566bd">1.8.10. ./2017-06-22/multi-pmc.pwgl</a></li>
+<li><a href="#org15ac7ed">1.8.11. ./2017-06-22/multi-score-pmc.pwgl</a></li>
+<li><a href="#org0747665">1.8.12. ./2017-06-22/sc-info.pwgl</a></li>
+<li><a href="#org114adf2">1.8.13. ./2017-06-22/score-editor.pwgl</a></li>
+<li><a href="#orgb489156">1.8.14. ./2017-06-22/scs-card.pwgl</a></li>
+<li><a href="#org2a042c6">1.8.15. ./2017-06-22/text-box.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org2934536">1.9. 6-23</a>
+<ul>
+<li><a href="#org8b9c052">1.9.1. ./2017-06-23/enumerate-beats-to-measures-to-voices.pwgl</a></li>
+<li><a href="#org59d0a06">1.9.2. ./2017-06-23/four-four-beats-and-three-eight-measures.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org89c0f62">1.10. 6-24</a>
+<ul>
+<li><a href="#org2c230c9">1.10.1. ./2017-06-24/iterate-your-own-beat-constructor.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org3b8f3f1">1.11. 6-25</a>
+<ul>
+<li><a href="#org05e5a9a">1.11.1. ./2017-06-25/translate-three-pulses-code-to-rtm.pwgl</a></li>
+<li><a href="#org7b9aa08">1.11.2. ./2017-06-25/one-four-and-two-four-measure-databases.pwgl</a></li>
+<li><a href="#org98030b7">1.11.3. ./2017-06-25/three-four-measures.pwgl</a></li>
+<li><a href="#org1ac3bdd">1.11.4. ./2017-06-25/extract-nth-object-from-score.pwgl</a></li>
+<li><a href="#orgaa9e598">1.11.5. ./2017-06-25/slider-for-987-four-four-measures.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org3c8657a">1.12. 6-26</a>
+<ul>
+<li><a href="#org763bdd7">1.12.1. ./2017-06-26/complete-three-four-measures-27000.pwgl</a></li>
+<li><a href="#org9ab9a69">1.12.2. slider for 987 4/4 measures</a></li>
+<li><a href="#orgb326c03">1.12.3. 3/4 measures</a></li>
+</ul>
+</li>
+<li><a href="#orga7bb246">1.13. ./2017-06-26/produce-but-dont-save-27000.pwgl</a>
+<ul>
+<li><a href="#org5112765">1.13.1. produce but don't save 27000 measures</a></li>
+</ul>
+</li>
+<li><a href="#org0b454fb">1.14. translate three pulses code to rtm</a></li>
+</ul>
+</li>
+<li><a href="#orgb79c9db">2. MUSC7911</a>
+<ul>
+<li><a href="#org344954d">2.1. ./large/MUSC7911.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org15fbba0">3. misc.</a>
+<ul>
+<li><a href="#orgf319420">3.1. </a>
+<ul>
+<li><a href="#org712f09e">3.1.1. ./miscellaneous/2017-06-08/basic-pwgl-abstraction-as-lisp.pwgl</a></li>
+<li><a href="#orgd9d34fa">3.1.2. ./miscellaneous/2017-06-08/blank.pwgl</a></li>
+<li><a href="#orga703ff4">3.1.3. ./miscellaneous/2017-06-08/constructing-beats-and-measures2.pwgl</a></li>
+<li><a href="#org26791f4">3.1.4. ./miscellaneous/2017-06-08/generating-basic-RTMs.pwgl</a></li>
+<li><a href="#orgf9ff529">3.1.5. ./miscellaneous/2017-06-08/generating-basic-RTMs2.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org479e28d">3.2. </a>
+<ul>
+<li><a href="#org39d43fc">3.2.1. ./miscellaneous/2017-06-09/load-an-abstraction-maybe.pwgl</a></li>
+<li><a href="#org500e9ca">3.2.2. ./miscellaneous/2017-06-09/master-pc-sets-list.pwgl</a></li>
+<li><a href="#org6aae3d4">3.2.3. ./miscellaneous/2017-06-09/reassigning-pitches-with-RTMs.pwgl</a></li>
+<li><a href="#orgecff803">3.2.4. ./miscellaneous/2017-06-09/sc-info-code-in-blocks.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org9fdb62f">3.3. </a>
+<ul>
+<li><a href="#orgd29a100">3.3.1. ./miscellaneous/2017-06-10/arpeggio-sets-experiment.pwgl</a></li>
+<li><a href="#org8badad4">3.3.2. ./miscellaneous/2017-06-10/developing-variance.pwgl</a></li>
+<li><a href="#org202282c">3.3.3. ./miscellaneous/2017-06-10/filtering-sc-info.pwgl</a></li>
+<li><a href="#org891fbc1">3.3.4. ./miscellaneous/2017-06-10/four-parts-as-chords.pwgl</a></li>
+<li><a href="#orge4b1e62">3.3.5. ./miscellaneous/2017-06-10/generate-triadic-hexachords.pwgl</a></li>
+<li><a href="#orgd7e10cc">3.3.6. ./miscellaneous/2017-06-10/IFUNC-patching.pwgl</a></li>
+<li><a href="#org6fe9e20">3.3.7. ./miscellaneous/2017-06-10/PMC-tetrachords-7911.pwgl</a></li>
+<li><a href="#org1b5ed1d">3.3.8. ./miscellaneous/2017-06-10/score-harmony-scripting.pwgl</a></li>
+<li><a href="#orgd232b5f">3.3.9. ./miscellaneous/2017-06-10/two-chord-phrase-7911.pwgl</a></li>
+<li><a href="#orgb29ff0e">3.3.10. ./miscellaneous/2017-06-10/voiced-hexachords-7911.pwgl</a></li>
+</ul>
+</li>
+<li><a href="#org75c11c5">3.4. </a>
+<ul>
+<li><a href="#org922dd77">3.4.1. ./most-useful-abstractions/set-choice-abstraction.pwgl</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3228ad1" class="outline-2">
+<h2 id="org3228ad1"><span class="section-number-2">1</span> daily pwgl files</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgaf4c20c" class="outline-3">
+<h3 id="orgaf4c20c"><span class="section-number-3">1.1</span> 6-13</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-org2534b13" class="outline-4">
+<h4 id="org2534b13"><span class="section-number-4">1.1.1</span> ./2017-06-13/daily-pc-set-example.pwgl</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div><ol class="org-ol"><li><a id="orge585a6a"></a>daily pc-set- example<br  /><div class="outline-text-5" id="text-1-1-1-1">
+<ul class="org-ul">
+<li>"construct chords"  randomly selected from any set-class by</li>
+</ul>
+<p>
+cardinality
+</p>
+<ul class="org-ul">
+<li>assign a random octave and transposition</li>
+<li>decide on various non-mensural features (including arpeggiation?)
+with various "construct-chords" functions assigning various values
+to enumerating an arithmetic-series over the length of the chord
+list</li>
+</ul>
+</div></li>
+<li><a id="org1b46262"></a>picture<br  /><div class="outline-text-5" id="text-1-1-1-2">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.26.13%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%205.26.13%20PM.jpg" />
+</p>
+</div>
+</div></li></ol>
+</div>
+<div id="outline-container-orgf192e23" class="outline-4">
+<h4 id="orgf192e23"><span class="section-number-4">1.1.2</span> ./2017-06-13/trichord-pcset-slider.pwgl</h4>
+<div class="outline-text-4" id="text-1-1-2">
+</div><ol class="org-ol"><li><a id="org97eb994"></a>trichord-pcset-slider<br  /><div class="outline-text-5" id="text-1-1-2-1">
+<ul class="org-ul">
+<li>use clearly delineated horizontal slider to select a particular trichord</li>
+<li>return both the set-class name and the pcs</li>
+</ul>
+</div></li>
+<li><a id="org8e9cfc1"></a>picture<br  /><div class="outline-text-5" id="text-1-1-2-2">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.27.32%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%205.27.32%20PM.jpg" />
+</p>
+</div>
+</div></li></ol>
+</div>
+<div id="outline-container-org67225bc" class="outline-4">
+<h4 id="org67225bc"><span class="section-number-4">1.1.3</span> ./2017-06-13/use-code-boxes-for-pcs.pwgl</h4>
+<div class="outline-text-4" id="text-1-1-3">
+</div><ol class="org-ol"><li><a id="org40dd399"></a>use-code-boxes-for-pcs<br  /><div class="outline-text-5" id="text-1-1-3-1">
+<p>
+choose one set-type and variously transpose and displace a series of
+them into a chord editor
+</p>
+</div></li>
+<li><a id="org0d50960"></a>picture<br  /><div class="outline-text-5" id="text-1-1-3-2">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.27.48%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%205.27.48%20PM.jpg" />
+</p>
+</div>
+</div></li></ol>
+</div>
+</div>
+<div id="outline-container-org3a96a09" class="outline-3">
+<h3 id="org3a96a09"><span class="section-number-3">1.2</span> 6-14</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-orgf333f54" class="outline-4">
+<h4 id="orgf333f54"><span class="section-number-4">1.2.1</span> ./2017-06-14/permute-all-tn-octaves-of-cardinality.pwgl</h4>
+<div class="outline-text-4" id="text-1-2-1">
+</div><ol class="org-ol"><li><a id="org4cd0210"></a>permute all tn octaves of cardinality<br  /><div class="outline-text-5" id="text-1-2-1-1">
+<ul class="org-ul">
+<li>"construct-chords6" takes five arguments to create non-mensural score (arpeggiated) for any given set-type</li>
+<li>will map-enumerate over the whole cardinality?</li>
+<li>uses random permutations of lists (and pitches?)</li>
+</ul>
+</div></li>
+<li><a id="orgd1ca41c"></a>picture<br  /><div class="outline-text-5" id="text-1-2-1-2">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.28.24%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%205.28.24%20PM.jpg" />
+</p>
+</div>
+</div></li></ol>
+</div>
+</div>
+
+<div id="outline-container-org0116566" class="outline-3">
+<h3 id="org0116566"><span class="section-number-3">1.3</span> 6-15</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-org8025d87" class="outline-4">
+<h4 id="org8025d87"><span class="section-number-4">1.3.1</span> ./2017-06-15/add-velocity-to-score-templates.pwgl</h4>
+<div class="outline-text-4" id="text-1-3-1">
+</div><ol class="org-ol"><li><a id="orgea2d65e"></a>add-velocity-to-score-templates<br  /><div class="outline-text-5" id="text-1-3-1-1">
+<p>
+use velocity arguments with an existing midi list
+</p>
+</div></li>
+<li><a id="org6c7cb47"></a>picture<br  /><div class="outline-text-5" id="text-1-3-1-2">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%205.28.45%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%205.28.45%20PM.jpg" />
+</p>
+</div>
+</div></li>
+<li><a id="org7570f09"></a><br  /></li></ol>
+</div>
+<div id="outline-container-orgee6ccaf" class="outline-4">
+<h4 id="orgee6ccaf"><span class="section-number-4">1.3.2</span> ./2017-06-15/best-way-to-move-long-non-mensural.pwgl</h4>
+<div class="outline-text-4" id="text-1-3-2">
+</div><ol class="org-ol"><li><a id="org1a58925"></a>best-way-to-move-long-non-mensural<br  /><div class="outline-text-5" id="text-1-3-2-1">
+<p>
+view a score-editor play (with set analysis scripting)
+</p>
+</div></li>
+<li><a id="orgbe9c9cc"></a>picture<br  /><div class="outline-text-5" id="text-1-3-2-2">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%207.59.22%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%207.59.22%20PM.jpg" />
+</p>
+</div>
+</div></li></ol>
+</div>
+<div id="outline-container-org0201214" class="outline-4">
+<h4 id="org0201214"><span class="section-number-4">1.3.3</span> ./2017-06-15/document-this-ultimate-pcset-listener.pwgl</h4>
+<div class="outline-text-4" id="text-1-3-3">
+</div><ol class="org-ol"><li><a id="org52065a0"></a>document this ultimate pcset listener<br  /><div class="outline-text-5" id="text-1-3-3-1">
+<p>
+construct-chords7 with a "construct-score-template" patch
+</p>
+</div></li>
+<li><a id="org5b790d2"></a>picture<br  /><div class="outline-text-5" id="text-1-3-3-2">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.00.18%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.00.18%20PM.jpg" />
+</p>
+</div>
+</div></li></ol>
+</div>
+<div id="outline-container-org9fbf92c" class="outline-4">
+<h4 id="org9fbf92c"><span class="section-number-4">1.3.4</span> ./2017-06-15/many-map-enums-with-score-editors.pwgl</h4>
+</div>
+<div id="outline-container-orgaf7e9d7" class="outline-4">
+<h4 id="orgaf7e9d7"><span class="section-number-4">1.3.5</span> ./2017-06-15/map-chords-to-voices.pwgl</h4>
+<div class="outline-text-4" id="text-1-3-5">
+</div><ol class="org-ol"><li><a id="orgfb766d0"></a>map chords to voices<br  /><div class="outline-text-5" id="text-1-3-5-1">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.00.47%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.00.47%20PM.jpg" />
+</p>
+</div>
+</div></li></ol>
+</div>
+<div id="outline-container-org13ca86d" class="outline-4">
+<h4 id="org13ca86d"><span class="section-number-4">1.3.6</span> ./2017-06-15/simpler-gentler-random-trichord-template.pwgl</h4>
+<div class="outline-text-4" id="text-1-3-6">
+</div><ol class="org-ol"><li><a id="org12350ae"></a>simpler gentler random trichord template<br  /><div class="outline-text-5" id="text-1-3-6-1">
+<p>
+construct chords7 with a given midi list and a construct-my-score-template
+</p>
+</div></li>
+<li><a id="org29739bc"></a>picture<br  /><div class="outline-text-5" id="text-1-3-6-2">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.01.17%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.01.17%20PM.jpg" />
+</p>
+</div>
+</div></li></ol>
+</div>
+<div id="outline-container-orge1f65f5" class="outline-4">
+<h4 id="orge1f65f5"><span class="section-number-4">1.3.7</span> ./2017-06-15/ultimate-three-part-pc-harmonies.pwgl</h4>
+<div class="outline-text-4" id="text-1-3-7">
+<p>
+ultimate three part pc harmonies
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.03.15%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.03.15%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1d22734" class="outline-3">
+<h3 id="org1d22734"><span class="section-number-3">1.4</span> 6-16</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-orgd577b58" class="outline-4">
+<h4 id="orgd577b58"><span class="section-number-4">1.4.1</span> ./2017-06-16/choosing-equals-pcset-with-multiscore.pwgl</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+choosing equals pcsert with multiscore
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.03.39%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.03.39%20PM.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-orgf65688d" class="outline-4">
+<h4 id="orgf65688d"><span class="section-number-4">1.4.2</span> ./2017-06-16/formatting-set-printouts.pwgl</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+formatting set printouts
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.04.17%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.04.17%20PM.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-orgbcb62ef" class="outline-4">
+<h4 id="orgbcb62ef"><span class="section-number-4">1.4.3</span> ./2017-06-16/manipulating-sc4-10-score.pwgl</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+manipulating sc4-10 score
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.04.51%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.04.51%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org08f9aa7" class="outline-3">
+<h3 id="org08f9aa7"><span class="section-number-3">1.5</span> 6-18</h3>
+<div class="outline-text-3" id="text-1-5">
+</div><div id="outline-container-org49fd71a" class="outline-4">
+<h4 id="org49fd71a"><span class="section-number-4">1.5.1</span> ./2017-06-18/collecting-all-multiscore-pmc-rules-in-a-measure.pwgl</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+collecting all multiscore pmc rules in a measure
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.05.16%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.05.16%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0bcce6a" class="outline-3">
+<h3 id="org0bcce6a"><span class="section-number-3">1.6</span> 6-19</h3>
+<div class="outline-text-3" id="text-1-6">
+</div><div id="outline-container-orge62357b" class="outline-4">
+<h4 id="orge62357b"><span class="section-number-4">1.6.1</span> ./2017-06-19/formatting-and-writing-out-to-file.pwgl</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<p>
+formatting and writing out to file
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.06.26%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.06.26%20PM.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-org9bc9e69" class="outline-4">
+<h4 id="org9bc9e69"><span class="section-number-4">1.6.2</span> ./2017-06-19/no-adjacent-chord-dups-with-single-pcset.pwgl</h4>
+</div>
+<div id="outline-container-org9fbab89" class="outline-4">
+<h4 id="org9fbab89"><span class="section-number-4">1.6.3</span> ./2017-06-19/openGL-text-macros.pwgl</h4>
+<div class="outline-text-4" id="text-1-6-3">
+<p>
+openGL text macros
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.07.06%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.07.06%20PM.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-org812a4b7" class="outline-4">
+<h4 id="org812a4b7"><span class="section-number-4">1.6.4</span> ./2017-06-19/simplified-by-set-pmc-searchspace.pwgl</h4>
+<div class="outline-text-4" id="text-1-6-4">
+<p>
+simplified by set pmc searchspace
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.07.24%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.07.24%20PM.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd1271d3" class="outline-4">
+<h4 id="orgd1271d3"><span class="section-number-4">1.6.5</span> ./2017-06-19/understanding-BPFs-and-interpolation.pwgl</h4>
+<div class="outline-text-4" id="text-1-6-5">
+<p>
+understanding bpfs and interpolation
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.07.38%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.07.38%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9e9eeef" class="outline-3">
+<h3 id="org9e9eeef"><span class="section-number-3">1.7</span> 6-20</h3>
+<div class="outline-text-3" id="text-1-7">
+</div><div id="outline-container-orga9fee9c" class="outline-4">
+<h4 id="orga9fee9c"><span class="section-number-4">1.7.1</span> ./2017-06-20/alea-and-breakpoint-functions.pwgl</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<p>
+alea and breakpoint functions
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.08.18%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.08.18%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga6396ae" class="outline-3">
+<h3 id="orga6396ae"><span class="section-number-3">1.8</span> 6-22</h3>
+<div class="outline-text-3" id="text-1-8">
+</div><div id="outline-container-org0d768bb" class="outline-4">
+<h4 id="org0d768bb"><span class="section-number-4">1.8.1</span> ./2017-06-22/abstraction-box.pwgl</h4>
+</div>
+<div id="outline-container-orgf36f194" class="outline-4">
+<h4 id="orgf36f194"><span class="section-number-4">1.8.2</span> ./2017-06-22/chord-editor.pwgl</h4>
+</div>
+<div id="outline-container-org08abb33" class="outline-4">
+<h4 id="org08abb33"><span class="section-number-4">1.8.3</span> ./2017-06-22/code-box.pwgl</h4>
+</div>
+<div id="outline-container-orgb699106" class="outline-4">
+<h4 id="orgb699106"><span class="section-number-4">1.8.4</span> ./2017-06-22/empty-pwgl-patch.pwgl</h4>
+</div>
+<div id="outline-container-org28db972" class="outline-4">
+<h4 id="org28db972"><span class="section-number-4">1.8.5</span> ./2017-06-22/enp-constructor.pwgl</h4>
+</div>
+<div id="outline-container-org8212ab5" class="outline-4">
+<h4 id="org8212ab5"><span class="section-number-4">1.8.6</span> ./2017-06-22/enp-score-notation.pwgl</h4>
+</div>
+<div id="outline-container-org52b1017" class="outline-4">
+<h4 id="org52b1017"><span class="section-number-4">1.8.7</span> ./2017-06-22/enp-script.pwgl</h4>
+</div>
+<div id="outline-container-orgdc5ff95" class="outline-4">
+<h4 id="orgdc5ff95"><span class="section-number-4">1.8.8</span> ./2017-06-22/lisp-code-box.pwgl</h4>
+</div>
+<div id="outline-container-org96c0b85" class="outline-4">
+<h4 id="org96c0b85"><span class="section-number-4">1.8.9</span> ./2017-06-22/map-enum.pwgl</h4>
+</div>
+<div id="outline-container-org01566bd" class="outline-4">
+<h4 id="org01566bd"><span class="section-number-4">1.8.10</span> ./2017-06-22/multi-pmc.pwgl</h4>
+</div>
+<div id="outline-container-org15ac7ed" class="outline-4">
+<h4 id="org15ac7ed"><span class="section-number-4">1.8.11</span> ./2017-06-22/multi-score-pmc.pwgl</h4>
+</div>
+<div id="outline-container-org0747665" class="outline-4">
+<h4 id="org0747665"><span class="section-number-4">1.8.12</span> ./2017-06-22/sc-info.pwgl</h4>
+</div>
+<div id="outline-container-org114adf2" class="outline-4">
+<h4 id="org114adf2"><span class="section-number-4">1.8.13</span> ./2017-06-22/score-editor.pwgl</h4>
+</div>
+<div id="outline-container-orgb489156" class="outline-4">
+<h4 id="orgb489156"><span class="section-number-4">1.8.14</span> ./2017-06-22/scs-card.pwgl</h4>
+</div>
+<div id="outline-container-org2a042c6" class="outline-4">
+<h4 id="org2a042c6"><span class="section-number-4">1.8.15</span> ./2017-06-22/text-box.pwgl</h4>
+</div>
+</div>
+<div id="outline-container-org2934536" class="outline-3">
+<h3 id="org2934536"><span class="section-number-3">1.9</span> 6-23</h3>
+<div class="outline-text-3" id="text-1-9">
+</div><div id="outline-container-org8b9c052" class="outline-4">
+<h4 id="org8b9c052"><span class="section-number-4">1.9.1</span> ./2017-06-23/enumerate-beats-to-measures-to-voices.pwgl</h4>
+<div class="outline-text-4" id="text-1-9-1">
+<p>
+enumerate beats to measure to voices
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.09.10%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.09.10%20PM.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-org59d0a06" class="outline-4">
+<h4 id="org59d0a06"><span class="section-number-4">1.9.2</span> ./2017-06-23/four-four-beats-and-three-eight-measures.pwgl</h4>
+</div>
+</div>
+<div id="outline-container-org89c0f62" class="outline-3">
+<h3 id="org89c0f62"><span class="section-number-3">1.10</span> 6-24</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+4/4 beats and 3/8 measures
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.10.00%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.10.00%20PM.jpg" />
+</p>
+</div>
+<div id="outline-container-org2c230c9" class="outline-4">
+<h4 id="org2c230c9"><span class="section-number-4">1.10.1</span> ./2017-06-24/iterate-your-own-beat-constructor.pwgl</h4>
+<div class="outline-text-4" id="text-1-10-1">
+<p>
+iterate your own beat constructor
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.11.01%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.11.01%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3b8f3f1" class="outline-3">
+<h3 id="org3b8f3f1"><span class="section-number-3">1.11</span> 6-25</h3>
+<div class="outline-text-3" id="text-1-11">
+</div><div id="outline-container-org05e5a9a" class="outline-4">
+<h4 id="org05e5a9a"><span class="section-number-4">1.11.1</span> ./2017-06-25/translate-three-pulses-code-to-rtm.pwgl</h4>
+</div>
+<div id="outline-container-org7b9aa08" class="outline-4">
+<h4 id="org7b9aa08"><span class="section-number-4">1.11.2</span> ./2017-06-25/one-four-and-two-four-measure-databases.pwgl</h4>
+<div class="outline-text-4" id="text-1-11-2">
+<p>
+<a href="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%204.25.50%20PM.png">~/Pictures/screenshots/wp-templates/Screen Shot 2017-06-26 at 4.25.50 PM.png</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org98030b7" class="outline-4">
+<h4 id="org98030b7"><span class="section-number-4">1.11.3</span> ./2017-06-25/three-four-measures.pwgl</h4>
+</div>
+<div id="outline-container-org1ac3bdd" class="outline-4">
+<h4 id="org1ac3bdd"><span class="section-number-4">1.11.4</span> ./2017-06-25/extract-nth-object-from-score.pwgl</h4>
+<div class="outline-text-4" id="text-1-11-4">
+<p>
+extract nth object from score
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.11.22%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.11.22%20PM.jpg" />
+</p>
+</div>
+</div>
+<div id="outline-container-orgaa9e598" class="outline-4">
+<h4 id="orgaa9e598"><span class="section-number-4">1.11.5</span> ./2017-06-25/slider-for-987-four-four-measures.pwgl</h4>
+<div class="outline-text-4" id="text-1-11-5">
+<p>
+1/4 and 2/4 measure databases
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.11.44%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.11.44%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3c8657a" class="outline-3">
+<h3 id="org3c8657a"><span class="section-number-3">1.12</span> 6-26</h3>
+<div class="outline-text-3" id="text-1-12">
+</div><div id="outline-container-org763bdd7" class="outline-4">
+<h4 id="org763bdd7"><span class="section-number-4">1.12.1</span> ./2017-06-26/complete-three-four-measures-27000.pwgl</h4>
+<div class="outline-text-4" id="text-1-12-1">
+<p>
+complete 3/4 measures 27000
+<img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.16.26%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.16.26%20PM.jpg" />
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org9ab9a69" class="outline-4">
+<h4 id="org9ab9a69"><span class="section-number-4">1.12.2</span> slider for 987 4/4 measures</h4>
+<div class="outline-text-4" id="text-1-12-2">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.12.58%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.12.58%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb326c03" class="outline-4">
+<h4 id="orgb326c03"><span class="section-number-4">1.12.3</span> 3/4 measures</h4>
+<div class="outline-text-4" id="text-1-12-3">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.13.58%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.13.58%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orga7bb246" class="outline-3">
+<h3 id="orga7bb246"><span class="section-number-3">1.13</span> ./2017-06-26/produce-but-dont-save-27000.pwgl</h3>
+<div class="outline-text-3" id="text-1-13">
+</div><div id="outline-container-org5112765" class="outline-4">
+<h4 id="org5112765"><span class="section-number-4">1.13.1</span> produce but don't save 27000 measures</h4>
+<div class="outline-text-4" id="text-1-13-1">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen Shot 2017-06-26 at 8.17.48 PM.jpg" alt="Screen Shot 2017-06-26 at 8.17.48 PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0b454fb" class="outline-3">
+<h3 id="org0b454fb"><span class="section-number-3">1.14</span> translate three pulses code to rtm</h3>
+<div class="outline-text-3" id="text-1-14">
+
+<div class="figure">
+<p><img src="file:///Users/a/Pictures/screenshots/wp-templates/Screen%20Shot%202017-06-26%20at%208.14.45%20PM.jpg" alt="Screen%20Shot%202017-06-26%20at%208.14.45%20PM.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb79c9db" class="outline-2">
+<h2 id="orgb79c9db"><span class="section-number-2">2</span> MUSC7911</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org344954d" class="outline-3">
+<h3 id="org344954d"><span class="section-number-3">2.1</span> ./large/MUSC7911.pwgl</h3>
+</div>
+</div>
+<div id="outline-container-org15fbba0" class="outline-2">
+<h2 id="org15fbba0"><span class="section-number-2">3</span> misc.</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgf319420" class="outline-3">
+<h3 id="orgf319420"><span class="section-number-3">3.1</span> </h3>
+<div class="outline-text-3" id="text-3-1">
+</div><div id="outline-container-org712f09e" class="outline-4">
+<h4 id="org712f09e"><span class="section-number-4">3.1.1</span> ./miscellaneous/2017-06-08/basic-pwgl-abstraction-as-lisp.pwgl</h4>
+</div>
+<div id="outline-container-orgd9d34fa" class="outline-4">
+<h4 id="orgd9d34fa"><span class="section-number-4">3.1.2</span> ./miscellaneous/2017-06-08/blank.pwgl</h4>
+</div>
+<div id="outline-container-orga703ff4" class="outline-4">
+<h4 id="orga703ff4"><span class="section-number-4">3.1.3</span> ./miscellaneous/2017-06-08/constructing-beats-and-measures2.pwgl</h4>
+</div>
+<div id="outline-container-org26791f4" class="outline-4">
+<h4 id="org26791f4"><span class="section-number-4">3.1.4</span> ./miscellaneous/2017-06-08/generating-basic-RTMs.pwgl</h4>
+</div>
+<div id="outline-container-orgf9ff529" class="outline-4">
+<h4 id="orgf9ff529"><span class="section-number-4">3.1.5</span> ./miscellaneous/2017-06-08/generating-basic-RTMs2.pwgl</h4>
+</div>
+</div>
+<div id="outline-container-org479e28d" class="outline-3">
+<h3 id="org479e28d"><span class="section-number-3">3.2</span> </h3>
+<div class="outline-text-3" id="text-3-2">
+</div><div id="outline-container-org39d43fc" class="outline-4">
+<h4 id="org39d43fc"><span class="section-number-4">3.2.1</span> ./miscellaneous/2017-06-09/load-an-abstraction-maybe.pwgl</h4>
+</div>
+<div id="outline-container-org500e9ca" class="outline-4">
+<h4 id="org500e9ca"><span class="section-number-4">3.2.2</span> ./miscellaneous/2017-06-09/master-pc-sets-list.pwgl</h4>
+</div>
+<div id="outline-container-org6aae3d4" class="outline-4">
+<h4 id="org6aae3d4"><span class="section-number-4">3.2.3</span> ./miscellaneous/2017-06-09/reassigning-pitches-with-RTMs.pwgl</h4>
+</div>
+<div id="outline-container-orgecff803" class="outline-4">
+<h4 id="orgecff803"><span class="section-number-4">3.2.4</span> ./miscellaneous/2017-06-09/sc-info-code-in-blocks.pwgl</h4>
+</div>
+</div>
+<div id="outline-container-org9fdb62f" class="outline-3">
+<h3 id="org9fdb62f"><span class="section-number-3">3.3</span> </h3>
+<div class="outline-text-3" id="text-3-3">
+</div><div id="outline-container-orgd29a100" class="outline-4">
+<h4 id="orgd29a100"><span class="section-number-4">3.3.1</span> ./miscellaneous/2017-06-10/arpeggio-sets-experiment.pwgl</h4>
+</div>
+<div id="outline-container-org8badad4" class="outline-4">
+<h4 id="org8badad4"><span class="section-number-4">3.3.2</span> ./miscellaneous/2017-06-10/developing-variance.pwgl</h4>
+</div>
+<div id="outline-container-org202282c" class="outline-4">
+<h4 id="org202282c"><span class="section-number-4">3.3.3</span> ./miscellaneous/2017-06-10/filtering-sc-info.pwgl</h4>
+</div>
+<div id="outline-container-org891fbc1" class="outline-4">
+<h4 id="org891fbc1"><span class="section-number-4">3.3.4</span> ./miscellaneous/2017-06-10/four-parts-as-chords.pwgl</h4>
+</div>
+<div id="outline-container-orge4b1e62" class="outline-4">
+<h4 id="orge4b1e62"><span class="section-number-4">3.3.5</span> ./miscellaneous/2017-06-10/generate-triadic-hexachords.pwgl</h4>
+</div>
+<div id="outline-container-orgd7e10cc" class="outline-4">
+<h4 id="orgd7e10cc"><span class="section-number-4">3.3.6</span> ./miscellaneous/2017-06-10/IFUNC-patching.pwgl</h4>
+</div>
+<div id="outline-container-org6fe9e20" class="outline-4">
+<h4 id="org6fe9e20"><span class="section-number-4">3.3.7</span> ./miscellaneous/2017-06-10/PMC-tetrachords-7911.pwgl</h4>
+</div>
+<div id="outline-container-org1b5ed1d" class="outline-4">
+<h4 id="org1b5ed1d"><span class="section-number-4">3.3.8</span> ./miscellaneous/2017-06-10/score-harmony-scripting.pwgl</h4>
+</div>
+<div id="outline-container-orgd232b5f" class="outline-4">
+<h4 id="orgd232b5f"><span class="section-number-4">3.3.9</span> ./miscellaneous/2017-06-10/two-chord-phrase-7911.pwgl</h4>
+</div>
+<div id="outline-container-orgb29ff0e" class="outline-4">
+<h4 id="orgb29ff0e"><span class="section-number-4">3.3.10</span> ./miscellaneous/2017-06-10/voiced-hexachords-7911.pwgl</h4>
+</div>
+</div>
+<div id="outline-container-org75c11c5" class="outline-3">
+<h3 id="org75c11c5"><span class="section-number-3">3.4</span> </h3>
+<div class="outline-text-3" id="text-3-4">
+</div><div id="outline-container-org922dd77" class="outline-4">
+<h4 id="org922dd77"><span class="section-number-4">3.4.1</span> ./most-useful-abstractions/set-choice-abstraction.pwgl</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: a</p>
+<p class="date">Created: 2017-07-06 Thu 13:15</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
