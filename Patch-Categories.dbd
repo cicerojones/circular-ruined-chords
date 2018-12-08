@@ -1,0 +1,57 @@
+; -*- mode: Lisp;-*-
+:title "Categories of PWGL patches"
+:subtitle "Sorting through and documenting much ad hoc work"
+
+:section-start "7911-derived"
+:bodytext "This houses work derived from a PIMA-era project on realizing chord progressions that attempted to explore 'IFUNC' pertinent relationships"
+:section-end
+ 
+:section-start "BPFs-and-visuals"
+:bodytext "The visual aspects of programming represent an under-appreciated topic."
+
+:bodytext "But PWGL is important partly because it presents the user with some invaluable tools for enhancing the visual aspect of doing algorithmic composition, including the 2D-Editor and GL-related things  (i.e. the innovation of ENP is just the beginning!)"
+:section-end
+
+:section-start "abstractions"
+:bodytext "What is a 'set-choice-abstraction' when it's at home?"
+:section-end
+ 
+:section-start "beats-and-measures"
+:bodytext "Notated music is made with beats and measures."
+:section-end
+
+:section-start "box-utilities"
+:bodytext "What do various PWGL boxes look like by themselves within a PWGL patch?"
+:section-end
+
+:section-start "microtonality"
+:bodytext "PWGL supports microtonality...up to a point. You really need PWGL-synth, though."
+:section-end
+
+:section-start "pcset-centric"
+:bodytext "I'm preoccupied with pc-set theory, always trying to learn my sets as if they were scales"
+:section-end
+
+:section-start "resources-img"
+:bodytext "Gotta be a better way to use screenshots of patches."
+:section-end
+
+:section-start "resources-txt"
+:bodytext "Org-mode files look messed up in PWGL, and other .txt or .lisp are just as confusing."
+:section-end
+
+:section-start "too-large"
+:bodytext "These patches take a loong time to load."
+:section-end
+    
+:section-start "transcription"
+:bodytext "Writing down other music using Keyboard input"
+:section-end
+
+:section-start "trash-broken"
+:bodytext "These files crash PWGL, perhaps because they call some .lisp code that's not available?"
+:section-end
+ 
+:section-start "uncategorized"
+:bodytext "Too much stuff in here!"
+:section-end
