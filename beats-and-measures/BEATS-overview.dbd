@@ -1,0 +1,7 @@
+; -*- mode: Lisp;-*-
+:title "Messing with Beats and Measures"
+:subtitle "Patches oriented toward manipulating ENP beats"
+
+:section-start "Salient Examples"
+:bodytext "See making-backtick-beats.pwgl for a nice example"
+:section-end
