@@ -1,5 +1,5 @@
 ; -*- mode: Lisp;-*-
-:title "This Is A Title value"
+:title "This Is A Title value (there is no point here)"
 :subtitle "This Is A Subtitle value"
 
 :section-start "This Is a Section-Start value"
