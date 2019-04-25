@@ -5,3 +5,10 @@
 :section-start "Salient Examples"
 :bodytext "See making-backtick-beats.pwgl for a nice example"
 :section-end
+
+:section-start "More General Introduction"
+:bodytext "It would nice to house here a better introduction to the many patterns that emerge when making beat and measures a la the ENP way.
+
+For example. What. The. Heck.
+"
+:section-end
