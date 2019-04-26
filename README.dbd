@@ -8,7 +8,7 @@
 
 :section-start "A Section-Start for an Important Value"
 :bodytext "Where do important values go? In a Section?"
-:important "This Is An Important value"
+:important "This Is An Important value (huh)"
 :section-end
 
 :section-start "A Section-Start for a Code value"
