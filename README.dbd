@@ -12,7 +12,7 @@
 :section-end
 
 :section-start "A Section-Start for a Code value"
-:bodytext "Here comes the Code value"
+:bodytext "Here comes the Code value (look, i really did do this...somewhere)"
 :code "#.(format () "~a" (ccl::pwgl-human-readable-version-string :long))"
 :section-end
 
