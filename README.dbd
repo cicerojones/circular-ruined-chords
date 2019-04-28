@@ -3,7 +3,9 @@
 :subtitle "This Is A Subtitle value (nor should there be a point here)"
 
 :section-start "This Is a Section-Start value (I swear I'm gonna start opening this again)"
-:bodytext "This Is A Bodytext value"
+:bodytext "This Is A Bodytext value, which will be followed by a newline still within the quotes.
+
+Thus, this is the newline. How'd ya like them apples?"
 :section-end
 
 :section-start "A Section-Start for an Important Value"
