@@ -112,6 +112,7 @@ In the REPL buffer in SLIME you can also change packages with a REPL shortcut. T
 	  (iterate:collect (mapcar #'(lambda (x) (+ x i)) '(36 48 60)))))))
 #+END_SRC
 ** 
+
 This is a classical combinatorial
 problem where our stating point is a
 12-tone 'mother-chord' (1).  We want to
@@ -137,8 +138,9 @@ The results can be analyzed with the
 'sc-name' box (5). The final result can
 be inspected in a 'chord-editor' (6)
 which displays the chords as a matrix.
+
 * score pmc syntax, matching and rules
-** 
+
 * enp
 * all pmc syntax and rules
 ** single wildcard
