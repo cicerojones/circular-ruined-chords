@@ -1,0 +1,86 @@
+* Yes, another general README for PWGL work
+#+begin_src shell
+tree
+#+end_src
+
+#+RESULTS:
+| 0   |                                                    |    |       |
+| ├── | README.org                                         |    |       |
+| ├── | adjoin-four-random-measures.pwgl                   |    |       |
+| ├── | bach-for-MIDI-only.pwgl                            |    |       |
+| ├── | construct-chords-into-beats-with-notation-box.pwgl |    |       |
+| ├── | enter-some-notes-and-chords.pwgl                   |    |       |
+| ├── | iterate-as-transpose-pcsets.pwgl                   |    |       |
+| ├── | map-enum-over-a-chord-list.pwgl                    |    |       |
+| ├── | motif-chromatic-baroque.pwgl                       |    |       |
+| ├── | my-collect-score-objects.pwgl                      |    |       |
+| ├── | print-prime-form-with-given-pcset.pwgl             |    |       |
+| ├── | replace-chords-using-ENP-macros.pwgl               |    |       |
+| ├── | sixteenth-note-beat.mid                            |    |       |
+| ├── | various-enp-constructor-beats-and-measures         |    |       |
+| └── | various-enp-constructor-beats-and-measures.pwgl    |    |       |
+|     |                                                    |    |       |
+| 0   | directories,                                       | 14 | files |
+
+
+| ├── | adjoin-four-random-measures.pwgl                   |    |       |
+
+| ├── | bach-for-MIDI-only.pwgl                            |    |       |
+
+| ├── | construct-chords-into-beats-with-notation-box.pwgl |    |       |
+
+| ├── | enter-some-notes-and-chords.pwgl                   |    |       |
+
+| ├── | iterate-as-transpose-pcsets.pwgl                   |    |       |
+
+| ├── | map-enum-over-a-chord-list.pwgl                    |    |       |
+
+| ├── | motif-chromatic-baroque.pwgl                       |    |       |
+
+| ├── | my-collect-score-objects.pwgl                      |    |       |
+
+| ├── | print-prime-form-with-given-pcset.pwgl             |    |       |
+
+| ├── | replace-chords-using-ENP-macros.pwgl               |    |       |
+
+| ├── | sixteenth-note-beat.mid                            |    |       |
+
+| ├── | various-enp-constructor-beats-and-measures         |    |       |
+
+| └── | various-enp-constructor-beats-and-measures.pwgl    |    |       |
+
+** 
+*** various-enp-constructor-beats-and-measures.pwgl
+|   |   |
+
+*** adjoin-four-random-measures.pwgl
+|   |   |
+
+*** construct-chords-into-beats-with-notation-box.pwgl
+| t |   |
+
+*** iterate-as-transpose-pcsets.pwgl
+| t |   |
+
+*** bach-for-MIDI-only.pwgl
+| t |   |
+Not much to this one!
+*** enter-some-notes-and-chords.pwgl
+| t |   |
+
+*** map-enum-over-a-chord-list.pwgl
+| t |   |
+
+*** motif-chromatic-baroque.pwgl
+| t |   |
+
+*** my-collect-score-objects.pwgl
+| t |   |
+
+*** print-prime-form-with-given-pcset.pwgl
+| t |   |
+
+*** replace-chords-using-ENP-macros.pwgl
+| t |   |
+
+
